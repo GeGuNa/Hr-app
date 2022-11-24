@@ -23,12 +23,18 @@
         </div>
         <div class="p-5 bg-white rounded shadow-lg">
           <h3 class="mb-2 text-center pt-5">Sign In</h3>
-          <p class="text-center lead" style="display:none">Sign In to manage all your devices</p>
-          <form>
+          
+  
+          
+	<%if (error) {%>
+  <h2><%= error %></h2>
+	<% } %>
+           
+          <form action="/in" method="post">
             <label class="font-500">Email</label>
-            <input name="" class="form-control form-control-lg mb-3" type="email">
+            <input name="mail" class="form-control form-control-lg mb-3" type="email">
              <label class="font-500">Password</label>
-            <input name="" class="form-control form-control-lg" type="password">
+            <input name="pass" class="form-control form-control-lg" type="password">
             <p class="m-0 py-4"><a href="" class="text-muted">Forget password?</a></p>
             <button class="btn btn-primary btn-lg w-100 shadow-lg">SIGN IN</button>
           </form>
