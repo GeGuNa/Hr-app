@@ -1,0 +1,174 @@
+
+a {
+color: #a3c6b3;
+}
+
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; color: #a3c6b3; }
+a:active { text-decoration: none; }
+
+#jbs {
+
+}
+
+#lsts2 > a {
+//bottom:10px;
+margin-bottom: 10px;
+}
+
+#dr2k {
+padding:20px;
+}
+
+.fleft {
+float:left;
+}
+
+.fright {
+float:right;
+}
+
+
+.cmain {
+width:100%;
+}
+
+.drk {
+    color: darkgrey;
+}
+
+#drk {
+padding-right:10px;
+}
+
+#drk > div {
+color: darkgrey;
+}
+
+body {
+background:#d8d8d8;
+overflow-x:hidden;
+}
+
+select {
+outline:none;
+}
+
+
+.form-control {
+    border-color: white !important;
+    outline: none!important;
+    box-shadow: none!important;
+}
+
+.form-control:focus {
+    border-color: white !important;
+    outline: none!important;
+    box-shadow: none!important;
+}
+
+.form-select {
+    border-color: white !important;
+    outline: none!important;
+    box-shadow: none!important;
+}
+
+.form-select:focus {
+    border-color: white !important;
+    outline: none!important;
+    box-shadow: none!important;
+}
+
+
+#clr2 > span {
+color: #000;
+}
+
+.hdr {
+padding:20px;
+}
+
+.left {
+float:left;
+}
+
+
+
+.right {
+float:right;
+}
+
+
+.clrw  {
+background:#6d4444;
+}
+
+
+.mr-1 {margin-right: 0.25rem!important;}
+.mr-2 {margin-right: 0.5rem!important;}
+.mr-3 {margin-right: 0.75rem!important;}
+.mr-4 {margin-right: 1rem!important;}
+.mr-5 {margin-right: 1.5rem!important;}
+.mr-6 {margin-right: 0.5rem!important;}
+
+.ml-1 {margin-left: 0.25rem!important;}
+.ml-2 {margin-left: 0.5rem!important;}
+.ml-3 {margin-left: 0.75rem!important;}
+.ml-4 {margin-left: 1rem!important;}
+.ml-5 {margin-left: 1.5rem!important;}
+.ml-6 {margin-left: 0.5rem!important;}
+
+
+.pr-1 {padding-right: 0.25rem!important;}
+.pr-2 {padding-right: 0.5rem!important;}
+.pr-3 {padding-right: 0.75rem!important;}
+.pr-4 {padding-right: 1rem!important;}
+.pr-5 {padding-right: 1.5rem!important;}
+.pr-6 {padding-right: 0.5rem!important;}
+
+.pl-1 {padding-left: 0.25rem!important;}
+.pl-2 {padding-left: 0.5rem!important;}
+.pl-3 {padding-left: 0.75rem!important;}
+.pl-4 {padding-left: 1rem!important;}
+.pl-5 {padding-left: 1.5rem!important;}
+.pl-6 {padding-left: 0.5rem!important;}
+
+
+
+
+	.demo-container {
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.btn-lg {
+		padding: 12px 26px;
+		font-size: 14px;
+		font-weight: 700;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
+	::placeholder {
+	font-size:14px;
+	letter-spacing:0.5px;
+	}
+	.form-control-lg {
+		font-size: 16px;
+		padding: 25px 20px;
+	}
+	.font-500{
+	font-weight:500;	
+	}
+	.image-size-small{
+	width:140px;
+	margin:0 auto;	
+	}
+	.image-size-small img{
+	width:140px;
+	margin-bottom:-70px;	
+	}
+
+
+

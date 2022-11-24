@@ -1,0 +1,43 @@
+<%-include("header.ejs") %>
+
+<style>
+
+.form-control {
+    border-color: #b79f9f !important;
+}
+
+.form-control:focus {
+    border-color: #b79f9f !important;
+}
+
+
+</style>
+
+    <div class="row" style="margin:30px;">
+      <div class="col-lg-6 col-12 mx-auto">
+        <div class="text-center image-size-small position-relative">
+        <img src="/icons/user-vector.webp" class="rounded-circle p-2 bg-white">
+        <div class="icon-camera">
+        <a href="" class="text-primary"><i class="lni lni-camera"></i></a>
+        </div>
+        </div>
+        <div class="p-5 bg-white rounded shadow-lg">
+          <h3 class="mb-2 text-center pt-5">Sign In</h3>
+          <p class="text-center lead" style="display:none">Sign In to manage all your devices</p>
+          <form>
+            <label class="font-500">Email</label>
+            <input name="" class="form-control form-control-lg mb-3" type="email">
+             <label class="font-500">Password</label>
+            <input name="" class="form-control form-control-lg" type="password">
+            <p class="m-0 py-4"><a href="" class="text-muted">Forget password?</a></p>
+            <button class="btn btn-primary btn-lg w-100 shadow-lg">SIGN IN</button>
+          </form>
+         <div class="text-center pt-4">
+          <p class="m-0">Do not have an account? <a href="" class="text-dark font-weight-bold">Sign Up</a></p>
+        </div>          
+        </div>        
+      </div>
+    </div>
+
+
+<%-include("footer.ejs") %>
