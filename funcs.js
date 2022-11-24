@@ -19,9 +19,9 @@ return cidck.test(id)
 const knex = require('knex')({
 client: 'mysql',
 connection: {
-user:'',
-database:'',
-password: '',
+user:'hrg',
+database:'HRG',
+password: '123456',
 port:'',
 }
 });

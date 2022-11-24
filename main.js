@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 
 var session = require('express-session')
+const { Unix_timestamp, Is_number, knex } = require('./funcs.js')
 
 app.set('trust proxy', 1) 
 
@@ -25,9 +26,18 @@ app.use('/dist', express.static('dist'))
 app.use('/icons', express.static('icons'))
 app.use('/pics', express.static('pictures'))
 
+/*test
+app.use(async(req,resp,next) => {
 
+//const qzdd = await knex('user');
 
-app.get("/", (req, res) => {
+console.log(await knex('user').where('uid',1).first());
+
+next()
+})
+*/
+
+app.get("/", async(req, res) => {
 
 //req.session.error = ''
 
@@ -40,6 +50,8 @@ console.log(req.session.error)
 console.log(`--------------`)
 }
 */
+
+console.log(await knex('user').where('uid',1).first())
 
 
 res.render(`index.ejs`)
