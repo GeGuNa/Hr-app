@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Express HR</title>
+  <title><%=title %></title>
   <meta charset="utf-8">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,6 +35,9 @@
 <div class="col"> Candidates </div>
 <div class="col"> Employers </div>
 <div class="col"> Contact </div>
+	<%if (locals.user) {%>
+	<div class="col"> <%=locals.user%> </div>
+	<% } %>
 </div>
 </div>
 

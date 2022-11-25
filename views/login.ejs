@@ -26,8 +26,8 @@
           
   
           
-	<%if (error) {%>
-  <h2><%= error %></h2>
+	<%if (locals.error) {%>
+  <h2><%=locals.error %></h2>
 	<% } %>
            
           <form action="/in" method="post">

@@ -1,4 +1,5 @@
 const express = require('express')
+const cookieParser = require('cookie-parser')
 const app = express()
 
 var session = require('express-session')
@@ -9,6 +10,7 @@ app.set('trust proxy', 1)
 app.use(express.json())
 app.use(express.urlencoded({extended: true})); 
 
+app.use(cookieParser())
 
 app.use(session({
   secret: 'whocares',
@@ -37,7 +39,17 @@ next()
 })
 */
 
+
+
+//  let bad_auth = req.query.msg ? true : false;
+
+
 app.get("/", async(req, res) => {
+
+//let tm = Date.now()
+const exprd = new Date(new Date().getTime()+(3600*24*365*1000));
+
+res.cookie('name', 'express', {path:'/', maxAge: exprd.getTime()})
 
 //req.session.error = ''
 
@@ -51,17 +63,39 @@ console.log(`--------------`)
 }
 */
 
-console.log(await knex('user').where('uid',1).first())
+//console.log(await knex('user').where('uid',1).first())
 
 
-res.render(`index.ejs`)
+let ussauth = 0
+
+
+if (ussauth == 1) {
+psrq = {title:'Main', user: '124123'}
+} else {
+psrq = {title:'Main'}
+}
+
+
+
+res.render("index.ejs", psrq)
 
 res.end()
 })
 
 app.get("/in", (req, res) => {
 
-res.render(`login.ejs`, {error: ''})
+//res.render("login.ejs", {error: 'qweqeqw', title:'login', user:''})
+
+let us = 0
+let psrq
+
+if (us==1) {
+psrq = {title:'login', user: '124123'}
+} else {
+psrq = {title:'login'}
+}
+
+res.render("login.ejs", psrq)
 
 res.end()
 })
