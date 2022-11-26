@@ -29,6 +29,22 @@ app.use('/dist', express.static('dist'))
 app.use('/icons', express.static('icons'))
 app.use('/pics', express.static('pictures'))
 
+
+let  tusert
+
+
+app.use(async(req,resp,next) => {
+
+tusert = 0;
+
+//const qzdd = await knex('user');
+
+//console.log(await knex('user').where('uid',1).first());
+
+next()
+})
+
+
 /*test
 app.use(async(req,resp,next) => {
 
@@ -46,6 +62,10 @@ next()
 
 
 app.get("/", async(req, res) => {
+
+if (tusert == 1) {
+return res.redirect('/in')
+}
 
 //let tm = Date.now()
 const exprd = new Date(new Date().getTime()+(3600*24*365*1000));
