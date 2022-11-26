@@ -114,6 +114,22 @@ res.render("index.ejs", psrq)
 res.end()
 })
 
+
+
+
+
+app.get("/signup", async(req, res) => {
+
+
+
+res.render("register.ejs", {title:'registration'})
+
+res.end()
+})
+
+
+
+
 app.get("/in", (req, res) => {
 
 //res.render("login.ejs", {error: 'qweqeqw', title:'login', user:''})

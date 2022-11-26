@@ -172,3 +172,135 @@ background:#6d4444;
 
 
 
+
+.form-row {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+
+.form-row .form-control:first-child {
+    margin-right: 20px;
+}
+
+.form-row .form-control {
+    width: 100%;
+}
+
+.form-control {
+    height: 47px;
+    display: block;
+    border: 1px solid #e6e6e6;
+    background: 0 0;
+    border-radius: 5px;
+    padding: 0 19px;
+}
+
+
+.form-row .form-holder .form-control {
+    width: 100%;
+}
+
+
+.form-row .form-holder {
+    width: 100%;
+}
+
+.form-holder {
+    position: relative;
+}
+
+
+.form-holder i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+}
+.zmdi {
+    display: inline-block;
+    font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+button {
+    height: 47px;
+    width: 174px;
+    display: flex;
+    border: none;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 30px;
+    cursor: pointer;
+    font-family: montserrat-medium;
+    text-transform: uppercase;
+    background: #84cde1;
+    border-radius: 5px;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    overflow: hidden;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+    -webkit-transition-property: color,background-color;
+    transition-property: color,background-color;
+}
+
+
+button:hover {
+    -webkit-animation-name: hvr-back-pulse;
+    animation-name: hvr-back-pulse;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: .5s;
+    animation-delay: .5s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    background-color: #17c8f8;
+    color: #fff;
+}
+*/
+
+.label {
+    font-size: 16px;
+    color: #555;
+    text-transform: capitalize;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#q2 {
+flex-basis:50%;
+}
+
+#q2:first-child {
+margin-right:5%;
+}
+
+select.form-control {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    color: #999;
+}
+
+select.form-control:focus {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    color: #999;
+}
+
+
+@font-face{font-family:montserrat-regular;src:url(/dist/fonts/Montserrat-Regular.ttf)}
+@font-face{font-family:montserrat-medium;src:url(/dist/fonts/Montserrat-Medium.ttf)}
+
+*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+body{font-family:montserrat-medium;font-size:15px;color:#666;margin:0}
