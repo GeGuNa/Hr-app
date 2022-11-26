@@ -12,6 +12,7 @@ app.use(express.urlencoded({extended: true}));
 
 app.use(cookieParser())
 
+
 app.use(session({
   secret: 'whocares',
   resave: false,
@@ -49,7 +50,12 @@ app.get("/", async(req, res) => {
 //let tm = Date.now()
 const exprd = new Date(new Date().getTime()+(3600*24*365*1000));
 
-res.cookie('name', 'express', {path:'/', maxAge: exprd.getTime()})
+//res.cookie('name', 'express', {path:'/', maxAge: exprd.getTime()})
+
+
+//res.cookie('username', 'qqq', { expires: new Date(Date.now()+(3600*24*365*20*1000)), httpOnly: true })
+res.cookie('username', 'qqq', { expires: new Date(Date.now()+(3600*24*365*50*1000)) })
+
 
 //req.session.error = ''
 
@@ -66,11 +72,17 @@ console.log(`--------------`)
 //console.log(await knex('user').where('uid',1).first())
 
 
-let ussauth = 0
+let ussauth = 1
 
 
 if (ussauth == 1) {
-psrq = {title:'Main', user: '124123'}
+
+let qdata = await knex('user').where({
+  mail: 'asda@mail.ru',
+  password:  '123456'
+}).select('*').first();
+
+psrq = {title:'Main', user: qdata}
 } else {
 psrq = {title:'Main'}
 }
