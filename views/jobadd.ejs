@@ -1,0 +1,128 @@
+<%-include("header.ejs") %>
+
+<style>
+
+.form-control {
+    border-color: #b79f9f !important;
+}
+
+.form-control:focus {
+    border-color: #b79f9f !important;
+}
+
+
+</style>
+
+    <div class="row" style="margin:30px;">
+      <div class="col-lg-6 col-12 mx-auto">
+        <div class="text-center image-size-small position-relative">
+        <img src="/icons/employment.png" class="rounded-circle p-2 bg-white">
+        <div class="icon-camera">
+        <a href="" class="text-primary"><i class="lni lni-camera"></i></a>
+        </div>
+        </div>
+        <div class="p-5 bg-white rounded shadow-lg">
+          <h3 class="mb-4 mt-4 text-center  pt-4">Sign Up</h3>
+          
+  
+          
+	<%if (locals.error) {%>
+  <h2><%=locals.error %></h2>
+	<% } %>
+           
+           
+   
+   
+<form action="">
+<h3 style="display:none">zzz</h3>
+
+
+<div class="form-row">
+<input type="text" class="form-control" name="first" placeholder="Job title">
+</div>
+<div class="form-row">
+<input type="text" class="form-control" name="last" placeholder="Company name">
+</div>
+
+
+<div class="form-row">
+
+<input type="text" class="form-control" name="phone" placeholder="Experience">
+
+
+<input type="text" class="form-control" name="time" type="time" placeholder="Expire time">
+
+
+
+</div>
+
+
+
+<div class="form-row">
+
+<div class="form-holder" style="width:50%;">
+<select name="gender" class="form-control">
+<option value="" disabled="" selected="">Work type</option>
+<option value="class 01">Remote</option>
+<option value="class 02">Onsite</option>
+<option value="class 03">Hybrid</option>
+</select>
+<i class="zmdi zmdi-chevron-down"></i>
+</div>
+
+<div style="padding-left:5%;"></div>
+
+
+<div class="form-holder" style="width:50%;">
+<select name="gender" class="form-control">
+<option value="" disabled="" selected="">Employment Type</option>
+<option value="class 01">Full-time</option>
+<option value="class 02">Part-time</option>
+<option value="class 03">Contract</option>
+<option value="class 03">Internship</option>
+</select>
+<i class="zmdi zmdi-chevron-down"></i>
+</div>
+
+
+</div>
+
+
+<div class="form-holder">
+<select name="gender" class="form-control">
+<option value="" disabled="" selected="">Account type</option>
+<option value="seek">Seeker</option>
+<option value="empl">Employer</option>
+</select>
+<i class="zmdi zmdi-chevron-down"></i>
+</div>
+
+
+
+
+<textarea name="" placeholder="job describtion" class="form-control" style="margin-top:10px;margin-bottom:10px;padding:15px;height: 130px;"></textarea>
+
+
+<button name="reg" type="button" class="" style="text-align:center;color:#fff;background:#dc3545;border:0;padding:10px">Seek</button>
+
+
+</form>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+         <div class="text-center pt-4">
+          <p class="m-0">Do not have an account? <a href="/in" class="text-dark font-weight-bold">Sign In</a></p>
+        </div>          
+        </div>        
+      </div>
+    </div>
+
+
+<%-include("footer.ejs") %>

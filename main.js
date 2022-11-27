@@ -1,5 +1,6 @@
 const express = require('express')
 const cookieParser = require('cookie-parser')
+const job1253 = require('./jobs')
 const app = express()
 
 var session = require('express-session')
@@ -25,13 +26,15 @@ app.use(session({
 app.set('views', `${__dirname}/views/`)
 app.set("view engine", "ejs")
 
+
+
 app.use('/dist', express.static('dist'))
 app.use('/icons', express.static('icons'))
 app.use('/pics', express.static('pictures'))
 
 
-let  tusert
-let  tdatausr
+global.tusert
+global.tdatausr
 
 app.use(async(req,resp,next) => {
 
@@ -75,6 +78,9 @@ next()
 
 
 //  let bad_auth = req.query.msg ? true : false;
+
+
+app.use('/jobs', job1253)
 
 
 app.get("/", async(req, res) => {
