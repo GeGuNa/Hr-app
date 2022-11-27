@@ -33,6 +33,10 @@ app.use('/icons', express.static('icons'))
 app.use('/pics', express.static('pictures'))
 
 
+
+//let  tusert
+//let  tdatausr
+
 global.tusert
 global.tdatausr
 
@@ -271,6 +275,43 @@ res.render("login.ejs", psrq)
 
 
 //res.write(`qweqweqwe`)
+
+
+res.end()
+})
+
+
+
+app.get('/profile/:id', async(req,res)=>{
+
+let qz221a 
+
+const rquid = Math.abs(parseInt(req.params.id)) 
+
+if (isNaN(rquid) === true || rquid == 0) {
+res.write(`uupsi`)
+} else {
+
+qz221a = await knex('user').where("uid",rquid).select('*').first()
+
+if (!qz221a) {
+res.write(`Profile doesn't exists`)
+} else {
+res.render('profile.ejs', {title:'profile', user: qz221a})
+}
+
+}
+
+
+
+
+//console.log(qz221a)
+
+/*
+
+*/
+
+
 
 
 res.end()
