@@ -31,11 +31,27 @@ app.use('/pics', express.static('pictures'))
 
 
 let  tusert
-
+let  tdatausr
 
 app.use(async(req,resp,next) => {
 
 tusert = 0;
+
+
+const qusrs = req.cookies.mail
+const qusrp = req.cookies.pass
+
+
+if (qusrs !== undefined || qusrp !== undefined) {
+
+tusert = 1
+
+tdatausr = await knex('user').where({
+  mail: qusrs,
+  password:  qusrp
+}).select('*').first();
+
+}
 
 //const qzdd = await knex('user');
 
@@ -63,9 +79,10 @@ next()
 
 app.get("/", async(req, res) => {
 
+/*
 if (tusert == 1) {
 return res.redirect('/in')
-}
+}*/
 
 //let tm = Date.now()
 const exprd = new Date(new Date().getTime()+(3600*24*365*1000));
@@ -92,17 +109,22 @@ console.log(`--------------`)
 //console.log(await knex('user').where('uid',1).first())
 
 
-let ussauth = 1
+//let ussauth = 1
 
+/*
 
-if (ussauth == 1) {
+*/
 
+if (tusert == 1) {
+
+/*
 let qdata = await knex('user').where({
   mail: 'asda@mail.ru',
   password:  '123456'
-}).select('*').first();
+}).select('*').first();*/
 
-psrq = {title:'Main', user: qdata}
+
+psrq = {title:'Main', user: tdatausr}
 } else {
 psrq = {title:'Main'}
 }
@@ -120,7 +142,9 @@ res.end()
 
 app.get("/signup", async(req, res) => {
 
-
+if (tusert == 1) {
+return res.redirect('/')
+}
 
 res.render("register.ejs", {title:'registration'})
 
@@ -130,12 +154,21 @@ res.end()
 
 
 
-app.get("/in", (req, res) => {
+app.get("/in", async(req, res) => {
+
+if (tusert == 1) {
+return res.redirect('/')
+}
+
+
 
 //res.render("login.ejs", {error: 'qweqeqw', title:'login', user:''})
 
-let us = 0
 let psrq
+
+
+/*
+let us = 0
 
 if (us==1) {
 psrq = {title:'login', user: '124123'}
@@ -144,19 +177,30 @@ psrq = {title:'login'}
 }
 
 res.render("login.ejs", psrq)
+*/
+
+psrq = {title:'login'}
+
+
+res.render("login.ejs", psrq)
+
+
 
 res.end()
 })
 
 
-app.post("/in", (req, res) => {
-
-let qz = req.body.mail
-let qz2 = req.body.pass
+app.post("/in", async(req, res) => {
 
 
-console.log(qz)
-console.log(qz2)
+if (tusert == 1) {
+return res.redirect('/')
+}
+
+
+//let qz = req.body.mail
+//let qz2 = req.body.pass
+
 
 /*
 
@@ -167,8 +211,60 @@ console.log(qz)
 */
 
 
+//res.render("login.ejs", {error: 'qweqeqw', title:'login', user:''})
 
-res.write(`qweqweqwe`)
+/*
+let us = 0
+let psrq
+
+if (us==1) {
+psrq = {title:'login', user: '124123'}
+} else {
+psrq = {title:'login'}
+}
+
+res.render("login.ejs", psrq)
+*/
+
+const qusrs = req.body.mail
+const qusrp = req.body.pass
+
+let psrq
+
+if (qusrs === undefined || qusrp === undefined) {
+
+psrq = {title:'login', error: 'user or password is incorrect'}
+
+res.render("login.ejs", psrq)
+
+
+} else {
+
+let qdata = await knex('user').where({
+  mail: qusrs,
+  password:  qusrp
+}).select('*').first();
+
+
+if (qdata) {
+
+res.cookie('mail', qusrs, { expires: new Date(Date.now()+(3600*24*365*50*1000)) })
+res.cookie('pass', qusrp, { expires: new Date(Date.now()+(3600*24*365*50*1000)) })
+
+
+return res.redirect('/')
+} else {
+psrq = {title:'login', error: 'user or password is incorrect'}
+}
+
+res.render("login.ejs", psrq)
+
+
+}
+
+
+
+//res.write(`qweqweqwe`)
 
 
 res.end()
