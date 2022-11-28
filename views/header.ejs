@@ -27,7 +27,19 @@
 
 
 <div class="col-md-6 pr-2">
-<div><a href="/"><img src="/icons/icons8-world-map-80.png" width="30"></a></div>
+<div class="row gx-5">
+
+<div class="col-1">
+<a href="/"><img src="/icons/icons8-world-map-80.png" width="30"></a>
+</div>
+<%if (!locals.user) {%>
+<div class="col-11" style="margin-top:4px;">
+<a href="/in"><span class="serverApp">Login</span></a>
+<a href="/signup"><span class="serverApp" style="background:#e71717 !important;">Signup</span></a>
+</div>
+<%}%>
+
+</div>
 </div>
 
 <div class="col-md-6" id="clr2">

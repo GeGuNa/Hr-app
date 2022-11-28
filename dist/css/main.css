@@ -1,4 +1,14 @@
 
+.serverApp {
+    padding: 12px 1.8125rem;
+    border-radius: 1.1rem;
+    color: #fff;
+    background-color: #85c226;
+    outline: none;
+    cursor: pointer;
+}
+
+
 .panel-primary {
     border-color: #428bca;
 }
