@@ -1,5 +1,6 @@
 const express = require('express')
 const cookieParser = require('cookie-parser')
+const fileupl = require('express-fileupload')
 const job1253 = require('./jobs')
 const app = express()
 
@@ -20,6 +21,11 @@ app.use(session({
   saveUninitialized: true,
   cookie: { secure: true }
 }))
+
+
+app.use(fileupl({
+  limits: { fileSize: 10*1024*1024 },
+}));
 
 
 

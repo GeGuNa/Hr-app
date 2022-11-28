@@ -27,19 +27,19 @@
 
 
 <div class="col-md-6 pr-2">
-<div>HR</div>
+<div><a href="/"><img src="/icons/icons8-world-map-80.png" width="30"></a></div>
 </div>
 
 <div class="col-md-6" id="clr2">
 <div class="row">
 
-<div class="col"> Home </div>
-<div class="col"> Jobs </div>
-<div class="col"> Candidates </div>
-<div class="col"> Employers </div>
-<div class="col"> Contact </div>
+<div class="col"> <a href="/">Home </a></div>
+<div class="col"> <a href="/jobs/">Jobs </a></div>
+<div class="col"><a href="#"> Candidates </a></div>
+<div class="col"><a href="#"> Employers</a> </div>
+<div class="col"> <a href="/contact">Contact</a></div>
 	<%if (locals.user) {%>
-	<div class="col"> <%=locals.user.uid%> </div>
+	<div class="col"> <a href="/profile/<%=locals.user.uid%>"> <%=locals.user.name%> </a> </div>
 	<% } %>
 </div>
 </div>
