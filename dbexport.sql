@@ -16,6 +16,35 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `contact`
+--
+
+DROP TABLE IF EXISTS `contact`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `contact` (
+  `post_id` bigint(32) NOT NULL AUTO_INCREMENT,
+  `time` text DEFAULT current_timestamp(),
+  `name` text DEFAULT NULL,
+  `mail` text DEFAULT NULL,
+  `number` text DEFAULT NULL,
+  `subject` text DEFAULT NULL,
+  `desc` text DEFAULT NULL,
+  PRIMARY KEY (`post_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `contact`
+--
+
+LOCK TABLES `contact` WRITE;
+/*!40000 ALTER TABLE `contact` DISABLE KEYS */;
+INSERT INTO `contact` VALUES (1,'2022-11-28 21:03:33','zzz','qweqwe@mail.ge',NULL,NULL,NULL),(2,'2022-11-28 21:03:33','zzz','qweqwe@mail.ge',NULL,NULL,NULL),(3,'2022-11-28 21:03:34','zzz','qweqwe@mail.ge',NULL,NULL,NULL);
+/*!40000 ALTER TABLE `contact` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `user`
 --
 
@@ -64,4 +93,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-26  4:50:23
+-- Dump completed on 2022-11-28 21:04:43

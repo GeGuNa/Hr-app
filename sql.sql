@@ -8,4 +8,7 @@ alter table user add password text default '0';
 
 
 
+create table contact (`post_id` bigint(32) auto_increment not null,`time` text DEFAULT NOW(),`name` text,`mail` text,`number` text,`subject` text,`desc` text, primary key(post_id) ) auto_increment=1;
+
+
 
