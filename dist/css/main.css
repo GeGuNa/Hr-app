@@ -27,8 +27,12 @@
 }
 
 
+#hdr22 > div > a {
+color: #010102 !important;
+}
+
 a {
-color: #010102;
+color: #a3c6b3;
 }
 
 a:link { text-decoration: none; }
