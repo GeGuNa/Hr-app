@@ -318,6 +318,33 @@ res.end()
 })
 
 
+/* ************/
+
+
+app.get("/contact", async(req, res) => {
+
+if (tusert == 1) {
+psrq = {title:'Contact', user: tdatausr}
+} else {
+psrq = {title:'Contact'}
+}
+
+
+
+res.render("contact.ejs", psrq)
+
+res.end()
+})
+
+
+
+
+/**************/
+
+
+
+
+
 app.get("*", (req, res) => {
 
 res.write("error")
