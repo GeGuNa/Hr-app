@@ -43,6 +43,27 @@ position: relative;text-align: center;
     cursor: pointer;
 }
 
+.qqzntr22 {
+margin-top:10px;background:#fff;display:block;padding:10px
+}
+
+.qqzntr22 > a {
+display:block;
+padding:5px;
+color:#282525;
+}
+
+
+.qqzntr22 > a:hover {
+color: #fff !important;
+background: #0086dc;
+}
+
+
+.a22act {
+color: #fff !important;
+background: #0086dc;
+}
 
 
 #lsts2 > a {
