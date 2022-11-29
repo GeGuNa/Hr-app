@@ -8,59 +8,16 @@
 
 
 
-<div class="row" style="margin-top:14px;">
-
-<div class="col-2" style="background-color: white;padding:15px;">
-
-<div class="pcntr">
-<img src="/icons/Default.jpg"/>
-</div>
-
-<div class="pcntr Accnt">
-<%=user.name%> [ID: <%=user.uid%>]
-</div>
-
-<div class="qqzntr22" ="">
-  <a href="/jobs/add" class="">New job</a>
-  <a href="/my_company" class="">My companies</a>
-  <a href="#" class="">Messages</a>
-  <a href="#" class="">Settings</a>
-  <a href="#" class="">Exit</a>
-</div>
-
-
-</div>
-
-<div class="col-10">
-
-<h5 class="card-title" style="background-color: white;padding:10px 0 10px 0;text-align:center">New post</h5>
-
-<div class="commentBox">
-
-
-
-
-<form style="background:#fff;padding:10px">
-
-    <textarea class="form-control" style="resize:none;height:80px;" placeholder="What's on your mind"></textarea>
-    <button class="commentPost w-100" style="padding:10px;">Post</button>
-  
-  
-
-</form>
-
-
-
-
-</div>
-</div>
-
-</div>
 
 
 <div class="row">
 
-<h5 class="card-title" style="background-color: white;padding:10px 0 10px 0 ;margin-top:15px;text-align:center">Placed jobs by user</h5>
+<h5 class="card-title" style="background-color: white;padding: 14px 13px 13px 20px;margin-top:15px;text-align:left">
+
+<span style="float:left;">My companies (<%=cnt %>)</span>
+<a href="/add_company" style="float:right;color: black;">Add new</a>
+</h5>
+
 
 <div class="col-12">
 

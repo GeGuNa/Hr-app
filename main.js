@@ -91,7 +91,47 @@ next()
 //  let bad_auth = req.query.msg ? true : false;
 
 
+
+
 app.use('/jobs', job1253)
+
+
+/********************* company	*********************/ 
+
+
+app.get("/add_company", async(req, res) => {
+
+if (!tusert) {
+return res.redirect('/')
+}
+
+
+res.render("company_add.ejs", {title:'New company', user: tdatausr})
+
+res.end()
+})
+
+
+app.get("/my_company", async(req, res) => {
+
+if (!tusert) {
+return res.redirect('/')
+}
+
+
+let qz = await knex("company").where("user",tdatausr.uid).select(knex.raw('count(*) as cnt')).first()
+
+//console.log(qz.cnt)
+
+res.render("my_company.ejs", {title:'My companies', user: tdatausr, cnt:qz.cnt})
+
+res.end()
+})
+
+
+
+/******************************************/
+
 
 
 app.get("/", async(req, res) => {
