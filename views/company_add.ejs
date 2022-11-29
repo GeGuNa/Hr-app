@@ -28,77 +28,39 @@
            
    
    
-<form action="">
-<h3 style="display:none">zzz</h3>
+<form action="?" method="post">
 
-
-<div class="form-row">
-<input type="text" class="form-control" name="first" placeholder="Job title">
-</div>
-<div class="form-row">
-<input type="text" class="form-control" name="last" placeholder="Company name">
+<div class="" style="margin-bottom:10px;">
+<input type="text" class="form-control" name="cname" placeholder="Company name" required="">
 </div>
 
-
-<div class="form-row">
-
-<input type="text" class="form-control" name="phone" placeholder="Experience">
-
-
-<input type="text" class="form-control" name="time" type="time" placeholder="Expire time">
-
-
-
+<div class="" style="margin-bottom:10px;">
+<input type="text" class="form-control" name="country" placeholder="Country" required="">
 </div>
-
 
 
 <div class="form-row">
 
-<div class="form-holder" style="width:50%;">
-<select name="gender" class="form-control">
-<option value="" disabled="" selected="">Work type</option>
-<option value="class 01">Remote</option>
-<option value="class 02">Onsite</option>
-<option value="class 03">Hybrid</option>
-</select>
-<i class="zmdi zmdi-chevron-down"></i>
-</div>
 
-<div style="padding-left:5%;"></div>
+<input type="email" class="form-control" pattern="^[\w-]+@[\w-]+\.[\w-]+$" name="mail" placeholder="Comany email" required="">
 
-
-<div class="form-holder" style="width:50%;">
-<select name="gender" class="form-control">
-<option value="" disabled="" selected="">Employment Type</option>
-<option value="class 01">Full-time</option>
-<option value="class 02">Part-time</option>
-<option value="class 03">Contract</option>
-<option value="class 03">Internship</option>
-</select>
-<i class="zmdi zmdi-chevron-down"></i>
-</div>
+<input type="number" class="form-control" name="num" placeholder="Company Number" required="">
 
 
 </div>
 
 
-<div class="form-holder">
-<select name="gender" class="form-control">
-<option value="" disabled="" selected="">Account type</option>
-<option value="seek">Seeker</option>
-<option value="empl">Employer</option>
-</select>
-<i class="zmdi zmdi-chevron-down"></i>
+<div class="" style="margin-bottom:10px;">
+<input type="file" class="" style="padding: 0px;" name="foto" placeholder="Photo" accept="image/*" required="">
 </div>
 
 
 
 
-<textarea name="" placeholder="job describtion" class="form-control" style="margin-top:10px;margin-bottom:10px;padding:15px;height: 130px;"></textarea>
+<textarea name="desc" placeholder="Company description" class="form-control" style="margin-top:10px;margin-bottom:10px;padding:15px;height: 130px;" required=""></textarea>
 
 
-<button name="reg" type="button" style="text-align:center;color:#fff;background:#dc3545;border:0;padding:10px">Add</button>
+<input name="reg" type="submit" Value="Lets go" style="text-align:center;color:#fff;background:#dc3545;border:0;padding:10px">
 
 
 </form>

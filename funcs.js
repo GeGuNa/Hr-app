@@ -27,4 +27,20 @@ port:'',
 });
 
 
-module.exports = { Unix_timestamp, Is_number, knex }
+
+function ifImage(name) {
+
+const Tpimage = /^image\/(jpg|jpeg|png|gif|webp|bmp)+$/
+
+if (Tpimage.test(name)) {
+  return name.split("/")[1]
+} else {
+ return false; 
+}
+
+}
+
+
+
+
+module.exports = { Unix_timestamp, Is_number, knex, ifImage }

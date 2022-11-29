@@ -99,6 +99,43 @@ app.use('/jobs', job1253)
 /********************* company	*********************/ 
 
 
+app.post('/add_company', async(req, res) => {
+
+
+ if (!req.files || Object.keys(req.files).length === 0) {
+    return res.status(200).send('Choose image first');
+  }
+
+const Filen = req.files.foto;
+
+ if (Filen === undefined) {
+    return res.status(200).send('Choose image first');
+  }
+
+
+const Rname = req.body.cname;
+const Rmail = req.body.mail;
+const Rnumb = req.body.num;
+const Rcountry = req.body.country;
+const Rdesc = req.body.desc;
+
+
+const Filet = Filen.mimetype;
+
+
+const qztype = ifImage(Filet)
+const qda222 = new Date().getTime()
+const qz221  = Math.floor(Math.random()*10000)+1
+
+const QzFlNm = `${qz221}_${qda222}_${Filen.name}`
+
+
+
+
+res.end()
+})
+
+
 app.get("/add_company", async(req, res) => {
 
 if (!tusert) {
