@@ -28,36 +28,42 @@
 
   
           
-	
+<%if (locals.sent) {%>
+  <h2><%=locals.sent %></h2>
+<% } %>
            
-           
+         
+<%if (locals.error) {%>
+  <h2><%=locals.error %></h2>
+<% } %>
+
+
    
-   
-<form action="" method="post">
+<form action="?" method="post">
 <h3 style="display:none">zzz</h3>
 
 
 <div class="form-row">
-<input type="text" class="form-control" name="first" placeholder="Your email">
+<input type="email" class="form-control" pattern="^[\w-]+@[\w-]+\.[\w-]+$" name="mail" placeholder="Your email" required>
 </div>
 <div class="form-row">
-<input type="text" class="form-control" name="last" placeholder="Your name">
+<input type="text" class="form-control" name="fname" placeholder="Your name" required>
 </div>
 
 
 <div class="form-row">
-<input type="text" class="form-control" name="phone" placeholder="Subject">
-<input type="text" class="form-control" name="time" placeholder="Number">
+<input type="text" class="form-control" name="subj" placeholder="Subject" required>
+<input type="number" class="form-control" name="num" placeholder="Number" required>
 </div>
 
 
 
 
 
-<textarea name="" placeholder="Text goes here" class="form-control" style="margin-top:10px;margin-bottom:10px;padding:15px;height: 130px;"></textarea>
+<textarea name="txtw" placeholder="Text goes here" class="form-control" style="margin-top:10px;margin-bottom:10px;padding:15px;height: 130px;" required></textarea>
 
 
-<button name="reg" type="button" style="border-radius:7px;color:#fff;background:#5f79dc;border:0;padding:10px">Send</button>
+<input name="reg" type="submit" value="Send" style="border-radius:7px;color:#fff;background:#5f79dc;border:0;padding:10px">
 
 
 </form>

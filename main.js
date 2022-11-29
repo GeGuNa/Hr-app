@@ -345,6 +345,45 @@ res.end()
 
 
 
+app.post("/contact", async(req, res) => {
+
+const qmail = req.body.mail
+const qname = req.body.fname
+const qsubj = req.body.subj
+const qnumb = req.body.num
+const qtext = req.body.txtw
+
+if (qmail !== undefined || qname !== undefined || qsubj !== undefined || qnumb !== undefined || qtext !== undefined) {
+
+/*
+
+  `name` text DEFAULT NULL,
+  `mail` text DEFAULT NULL,
+  `number` text DEFAULT NULL,
+  `subject` text DEFAULT NULL,
+  `desc` text DEFAULT NULL,
+
+*/
+
+
+await knex('contact').insert({
+  name: qname,
+  mail:  qmail,
+	number:  qnumb, 
+	subject:  qsubj,
+	desc:  qtext
+});
+
+res.render('contact.ejs', {title: 'Contact', sent: 'Your question been sent, wait soon we will answer'})
+
+} else {
+
+res.render('contact.ejs', {title: 'Contact',error: 'something went off'})
+
+}
+
+res.end()
+})
 
 /**************/
 
