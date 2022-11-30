@@ -9,6 +9,19 @@
 }
 
 
+#pagination > a {
+margin-left:10px;
+text-decoration: none;
+//padding:10px 14px;
+padding: 8px 17px;
+border-radius:15%;
+margin: 0.125rem 0.25rem;
+}
+
+#pagination > .clr {
+color: #666 !important;
+}
+
 .panel-primary {
     border-color: #428bca;
 }
