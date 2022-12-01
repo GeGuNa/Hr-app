@@ -6,7 +6,7 @@ const job1253 = require('./jobs')
 const app = express()
 
 var session = require('express-session')
-const { Unix_timestamp, Is_number, knex } = require('./funcs.js')
+const { Unix_timestamp, Is_number, knex, ifImage, t_mail } = require('./funcs.js')
 
 app.set('trust proxy', 1) 
 
@@ -101,10 +101,15 @@ app.use('/jobs', job1253)
 
 app.post('/add_company', async(req, res) => {
 
+if (!tusert) {
+return res.redirect('/')
+}
+
+console.log(req.files)
 
  if (!req.files || Object.keys(req.files).length === 0) {
     return res.status(200).send('Choose image first');
-  }
+ }
 
 const Filen = req.files.foto;
 
@@ -130,6 +135,40 @@ const qz221  = Math.floor(Math.random()*10000)+1
 const QzFlNm = `${qz221}_${qda222}_${Filen.name}`
 
 
+if (Rname !== undefined || t_mail(Rmail) == false || Rnumb !== undefined || Rcountry !== undefined || Rdesc !== undefined) {
+
+/*
+
+  `time` bigint(32) DEFAULT NULL,
+  `name` text DEFAULT NULL,
+  `mail` text DEFAULT NULL,
+  `number` text DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `country` text DEFAULT NULL,
+  `user` bigint(32) DEFAULT NULL,
+
+*/
+
+await knex('company').insert({
+name: Rname, 
+mail: Rmail, 
+time: Unix_timestamp(),
+country: Rcountry,
+user: tdatausr.uid,
+description: Rdesc,
+picurl: QzFlNm
+})
+
+
+Filen.mv(`${__dirname}/pictures/${QzFlNm}`)
+
+
+}
+
+
+res.render("company_add.ejs", {title:'New company', user: tdatausr, add:'Company has been add'})
+
+
 
 
 res.end()
@@ -142,8 +181,8 @@ if (!tusert) {
 return res.redirect('/')
 }
 
-
 res.render("company_add.ejs", {title:'New company', user: tdatausr})
+
 
 res.end()
 })
@@ -160,7 +199,18 @@ let qz = await knex("company").where("user",tdatausr.uid).select(knex.raw('count
 
 //console.log(qz.cnt)
 
-res.render("my_company.ejs", {title:'My companies', user: tdatausr, cnt:qz.cnt})
+
+
+let qzdtwq = await knex('company').where("user",tdatausr.uid).select('*').orderByRaw('cid desc limit 6');
+
+//console.log(qzdtwq[0].cid)
+
+//res.render("company_add.ejs", {title:'New company', user: tdatausr, dataF:qzdtwq})
+
+
+
+
+res.render("my_company.ejs", {title:'My companies', user: tdatausr, cnt:qz.cnt, dataFetch:qzdtwq})
 
 res.end()
 })

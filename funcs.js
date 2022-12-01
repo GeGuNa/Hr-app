@@ -1,8 +1,32 @@
+
+
+
+var SpecialSymbols =  {
+    '<': '&lt;',
+    '>': '&gt;',
+    '(': '&#40;',
+    ')': '&#41;',
+    '#': '&#35;',
+    '&': '&amp;',
+    '"': '&quot;',
+    "'": '&apos;'
+};
+
+
 function Unix_timestamp(){
 
 const dt = new Date;
 
 return parseInt(dt.getTime()/1000);
+}
+
+
+function t_mail(mlll){
+
+let qq = /^[A-Z0-9._%+\-]+@[A-Z0-9.\-]+\.[A-Z]{2,8}$/i
+
+return qq.test(mlll);
+
 }
 
 
@@ -43,4 +67,4 @@ if (Tpimage.test(name)) {
 
 
 
-module.exports = { Unix_timestamp, Is_number, knex, ifImage }
+module.exports = { Unix_timestamp, Is_number, knex, ifImage, t_mail }

@@ -25,10 +25,12 @@
   <h2><%=locals.error %></h2>
 	<% } %>
            
-           
+  	<%if (locals.add) {%>
+  <div style="color: forestgreen;padding:10px 10px 20px;"> <%=locals.add %> </div>
+   <% } %>   
    
    
-<form action="?" method="post">
+<form action="?" method="post" enctype="multipart/form-data">
 
 <div class="" style="margin-bottom:10px;">
 <input type="text" class="form-control" name="cname" placeholder="Company name" required="">

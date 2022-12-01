@@ -29,3 +29,7 @@ PRIMARY KEY(jid),
 FOREIGN KEY (user) REFERENCES user(uid),
 FOREIGN KEY (cid) REFERENCES company(cid)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
+
+
+
+alter table company add picurl text default '';
