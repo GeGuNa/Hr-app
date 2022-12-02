@@ -101,33 +101,51 @@ app.use('/jobs', job1253)
 
 
 
+
 app.get("/get_pic/:id/", async(req,res)=>{
 
 
+
+
+
 let qz2211 = req.params.id	
-	
-const fs = require('fs');
+
+const rquid = Math.abs(parseInt(qz2211)) 
+
+
+
+
+
 
 let phtwq2 
 
-	
-if (qz2211 == 1) {	
 
-phtwq2 = '7989_1669923256059_user-vector.webp'
+if (isNaN(rquid) === true || rquid == 0) {
+	
+phtwq2 = '/icons/360_F_434728286_OWQQvAFoXZLdGHlObozsolNeuSxhpr84.jpg'
+	
+} else {
+
+const qzdd = await knex('company').where('cid', rquid).select('picurl').first();
+
+if (qzdd) {	
+
+phtwq2 = `/pictures/${qzdd['picurl']}`
 
 } else {
 	
-phtwq2 = '8402_1669921927241_11607991960.jpg'
+phtwq2 = '/icons/360_F_434728286_OWQQvAFoXZLdGHlObozsolNeuSxhpr84.jpg'
 	
 }
 
+} 
 
-let qzqq = fs.readFileSync(`${__dirname}/pictures/${phtwq2}`);
-const {size} = fs.statSync(`${__dirname}/pictures/${phtwq2}`);
+const fs = require('fs');
+
+let qzqq = fs.readFileSync(`${__dirname}${phtwq2}`);
+const {size} = fs.statSync(`${__dirname}${phtwq2}`);
 
 let qz22z_z =  mime.lookup(phtwq2);
-
-
 
 
 res.set({
@@ -140,7 +158,11 @@ res.set({
 
 res.send(qzqq).status(200)
 
+
 res.end();
+
+
+
 });
 
 
