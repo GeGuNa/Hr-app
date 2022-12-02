@@ -259,6 +259,14 @@ console.log(`--------------`)
 
 */
 
+
+let qzdtwq22 = await knex('job').select('*').orderByRaw('`jid` desc limit 6');
+//let cmpnqweq = await knex('company').where('').select('*').first();
+
+
+//console.log(cmpnqweq)
+
+
 if (tusert == 1) {
 
 /*
@@ -268,10 +276,12 @@ let qdata = await knex('user').where({
 }).select('*').first();*/
 
 
-psrq = {title:'Main', user: tdatausr}
+psrq = {title:'Main', user: tdatausr, dataFetch: qzdtwq22}
 } else {
-psrq = {title:'Main'}
+psrq = {title:'Main', dataFetch: qzdtwq22}
 }
+
+
 
 
 

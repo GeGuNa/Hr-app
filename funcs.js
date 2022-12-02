@@ -20,6 +20,24 @@ const dt = new Date;
 return parseInt(dt.getTime()/1000);
 }
 
+function time_calc(tm){
+	
+var date = new Date();
+
+let today = date.getDate()
+let yesterday = date.getDate()-1
+
+var cons2 = new Date(tm);
+//var yesterday = new Date(Date.now() - 86400000); //  24 * 60 * 60 * 1000
+
+//var twoDaysAgo = new Date((new Date()).valueOf() - 1000*60*60*24*2);
+//var oneHourAgo = new Date((new Date()).valueOf() - 1000*60*60);
+
+
+
+return 	
+	
+}
 
 function t_mail(mlll){
 

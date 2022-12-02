@@ -1,0 +1,35 @@
+MariaDB [HRG]> describe company;
++-------------+------------+------+-----+---------+----------------+
+| Field       | Type       | Null | Key | Default | Extra          |
++-------------+------------+------+-----+---------+----------------+
+| cid         | bigint(32) | NO   | PRI | NULL    | auto_increment |
+| time        | bigint(32) | YES  |     | NULL    |                |
+| name        | text       | YES  |     | NULL    |                |
+| mail        | text       | YES  |     | NULL    |                |
+| number      | text       | YES  |     | NULL    |                |
+| description | text       | YES  |     | NULL    |                |
+| country     | text       | YES  |     | NULL    |                |
+| user        | bigint(32) | YES  | MUL | NULL    |                |
+| picurl      | text       | YES  |     | ''      |                |
++-------------+------------+------+-----+---------+----------------+
+9 rows in set (0.001 sec)
+
+MariaDB [HRG]> describe job;
++-------------+------------+------+-----+---------+----------------+
+| Field       | Type       | Null | Key | Default | Extra          |
++-------------+------------+------+-----+---------+----------------+
+| jid         | bigint(32) | NO   | PRI | NULL    | auto_increment |
+| user        | bigint(32) | YES  | MUL | NULL    |                |
+| cid         | bigint(32) | YES  | MUL | NULL    |                |
+| time        | bigint(32) | YES  |     | NULL    |                |
+| expire_time | bigint(32) | YES  |     | NULL    |                |
+| name        | text       | YES  |     | NULL    |                |
+| mail        | text       | YES  |     | NULL    |                |
+| number      | text       | YES  |     | NULL    |                |
+| subject     | text       | YES  |     | NULL    |                |
+| desc        | text       | YES  |     | NULL    |                |
++-------------+------------+------+-----+---------+----------------+
+10 rows in set (0.001 sec)
+
+
+insert into job (`user`,`cid`,`name`,`mail`,`number`,`subject`,`desc`) values('1','22','From  zzVidea', 'asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe');
