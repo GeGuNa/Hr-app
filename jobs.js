@@ -85,12 +85,9 @@ return res.redirect('/')
 }
 
 
-
 const qexp = req.body.exp
 const qname = req.body.name
 const qtitle= req.body.title
-
-
 const qtime = req.body.time
 const jtype = req.body.typej
 const etype = req.body.etype
@@ -100,15 +97,7 @@ const qdesc = req.body.descr
 
 
 
-let psrq
 
-if (tusert == 1) {
-psrq = {title:'New job', user: tdatausr}
-} else {
-psrq = {title:'New job'}
-}
-
-res.render("jobadd.ejs", psrq)
 
 res.end()
 })
