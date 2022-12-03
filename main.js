@@ -37,6 +37,7 @@ app.use(fileupl({
 app.set('views', `${__dirname}/views/`)
 app.set("view engine", "ejs")
 
+/* app.engine('html', require('ejs').renderFile); */
 
 
 app.use('/dist', express.static('dist'))
@@ -608,6 +609,6 @@ res.end()
 
 
 //127.0.0.1:2000
-app.listen(2000, () => {
-	console.log(`done`)
+app.listen(2000, (err) => {
+	if (err)console.log(`done`)
 })

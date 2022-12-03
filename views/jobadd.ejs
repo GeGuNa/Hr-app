@@ -33,21 +33,40 @@
            
    
    
-<form action="">
+<form action="?" method="post">
 <h3 style="display:none">zzz</h3>
 
 
 <div class="form-row">
-<input type="text" class="form-control" name="first" placeholder="Job title">
-</div>
-<div class="form-row">
-<input type="text" class="form-control" name="last" placeholder="Company name">
+<input type="text" class="form-control" name="title" placeholder="Job title">
 </div>
 
 
 <div class="form-row">
 
-<input type="text" class="form-control" name="phone" placeholder="Experience">
+
+
+<div class="form-holder" style="width:100%;">
+<select name="name" class="form-control">
+<option value="" disabled="" selected="">Choose company</option>
+<% cdata.map((val)=> { %>
+<option value="<%=val.cid%>"><%=val.name%></option>
+<% }) %>
+
+
+</select>
+<i class="zmdi zmdi-chevron-down"></i>
+</div>
+
+
+
+
+</div>
+
+
+<div class="form-row">
+
+<input type="text" class="form-control" name="exp" placeholder="Experience">
 
 
 <input type="text" class="form-control" name="time" type="time" placeholder="Expire time">
@@ -61,7 +80,7 @@
 <div class="form-row">
 
 <div class="form-holder" style="width:50%;">
-<select name="gender" class="form-control">
+<select name="typej" class="form-control">
 <option value="" disabled="" selected="">Work type</option>
 <option value="class 01">Remote</option>
 <option value="class 02">Onsite</option>
@@ -74,7 +93,7 @@
 
 
 <div class="form-holder" style="width:50%;">
-<select name="gender" class="form-control">
+<select name="etype" class="form-control">
 <option value="" disabled="" selected="">Employment Type</option>
 <option value="class 01">Full-time</option>
 <option value="class 02">Part-time</option>
@@ -89,7 +108,7 @@
 
 
 <div class="form-holder">
-<select name="gender" class="form-control">
+<select name="atype" class="form-control">
 <option value="" disabled="" selected="">Account type</option>
 <option value="seek">Seeker</option>
 <option value="empl">Employer</option>
@@ -100,10 +119,10 @@
 
 
 
-<textarea name="" placeholder="job describtion" class="form-control" style="margin-top:10px;margin-bottom:10px;padding:15px;height: 130px;"></textarea>
+<textarea name="descr" placeholder="job describtion" class="form-control" style="margin-top:10px;margin-bottom:10px;padding:15px;height: 130px;"></textarea>
 
 
-<button name="reg" type="button" style="text-align:center;color:#fff;background:#dc3545;border:0;padding:10px">Add</button>
+<button name="go" type="button" style="text-align:center;color:#fff;background:#dc3545;border:0;padding:10px">Add</button>
 
 
 </form>
