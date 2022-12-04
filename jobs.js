@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express.Router()
-const { Unix_timestamp, Is_number, knex, t_mail } = require('./funcs.js')
+const { Unix_timestamp, Is_number, knex, t_mail, is_Empty } = require('./funcs.js')
 
 
 app.get("/", async(req, res) => {
@@ -84,15 +84,31 @@ if (tusert == 0) {
 return res.redirect('/')
 }
 
-
-
 const qcomp = req.body.cid
-const qtitle= req.body.title
+
+const rquid = Math.abs(parseInt(qcomp)) 
+
+if (isNaN(rquid) === true || rquid == 0) {
+	return res.status(200).send('uups')
+}
+
+
+let qz221a = await knex('company').where("cid",rquid).select('*')
+
+if (!qz221a) {
+	return res.status(200).send('uups')
+}
+
+const qtitle = req.body.title
 const qexp = req.body.exp
 const qexpt = req.body.exp_time
 const jtype = req.body.typej
 const etype = req.body.etype
 const qdesc = req.body.descr
+
+
+
+//if (is_Empty())
 
 
 let qw2zze = new Date()
@@ -141,14 +157,13 @@ if (qtime == 1) {
 
 await knex('jobs').insert({
 	user: tdatausr.uid,
-	name: tdatausr.uid,
-	cid: tdatausr.uid,
-	desc: tdatausr.uid,
-	experience_time: tdatausr.uid,
-	empl_type: tdatausr.uid,
-	work_type: tdatausr.uid,
-	user: tdatausr.uid,
-	user: tdatausr.uid
+	name: qtitle,
+	cid: rquid,
+	desc: qdesc,
+	experience_time: qexp,
+	empl_type: etype,
+	work_type: jtype,
+	expire_time: qexpt
 });
 
 

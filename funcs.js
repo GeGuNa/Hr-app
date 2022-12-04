@@ -13,6 +13,86 @@ var SpecialSymbols =  {
 };
 
 
+/*
+function is_Empty(str, max, min = 0) {
+	
+let str2 = str	
+	
+if (Array.isArray(str2)) {	
+
+str2.map((val) => {
+
+ if (val == undefined || val === undefined) {
+	return false	
+ } 
+ 
+  if (val.length<max) {
+	 return false;
+ } 
+  
+  return true;
+	
+})
+
+
+} else {	
+	
+ if (str2 == undefined || str2 === undefined) {
+	return false	
+ } 
+ 
+  if (str2.length<max) {
+	 return false;
+ } 
+  
+  return true;
+
+ 
+}
+
+}
+*/
+
+
+function is_Empty(str, max, min = 0) {
+
+let str2 = str	
+let res = true	
+
+if (Array.isArray(str2)) {	
+
+str2.map((val) => {
+
+ if (val == undefined || val === undefined) {
+	res = false	
+ } else if (val.length<max) {
+	 res = false;
+ } else  res = true;
+	
+})
+
+return res
+} else {	
+	
+
+ if (str2 == undefined || str2 === undefined) {
+	return false	
+ } else if (str2.length<max) {
+	 return false;
+ } else return true;
+
+ 
+}
+
+}
+
+/*
+ * is_Empty('qweqwe',12)
+ * is_Empty(new Array('qweqwe','qweqwe','qweqweqwe'),12)
+ * is_Empty(['qweqwe','qweqwe','qweqweqwe'],15)
+ */
+
+
 function Unix_timestamp(){
 
 const dt = new Date;
