@@ -37,8 +37,8 @@
 <h3 style="display:none">zzz</h3>
 
 
-<div class="form-row">
-<input type="text" class="form-control" name="title" placeholder="Job title">
+<div style="margin-bottom: 20px;">
+<input type="text" class="form-control" name="title" placeholder="Job title" maxlength="128" required>
 </div>
 
 
@@ -47,7 +47,7 @@
 
 
 <div class="form-holder" style="width:100%;">
-<select name="name" class="form-control">
+<select name="cid" class="form-control">
 <option value="" disabled="" selected="">Choose company</option>
 <% cdata.map((val)=> { %>
 <option value="<%=val.cid%>"><%=val.name%></option>
@@ -66,10 +66,21 @@
 
 <div class="form-row">
 
-<input type="text" class="form-control" name="exp" placeholder="Experience">
+<input type="text" class="form-control" name="exp" placeholder="Experience"  maxlength="128" required>
+
+<div class="form-holder" style="width:100%;">
+<select name="exp_time" class="form-control">
+<option value="" disabled="" selected="">Time</option>
+<option value="1">for 7 days</option>
+<option value="2">for 14 days</option>
+<option value="3">for 21 days</option>
+<option value="4">for 28 days</option>
+<option value="5">for 36 days</option>
 
 
-<input type="text" class="form-control" name="time" type="time" placeholder="Expire time">
+</select>
+<i class="zmdi zmdi-chevron-down"></i>
+</div>
 
 
 
@@ -82,9 +93,9 @@
 <div class="form-holder" style="width:50%;">
 <select name="typej" class="form-control">
 <option value="" disabled="" selected="">Work type</option>
-<option value="class 01">Remote</option>
-<option value="class 02">Onsite</option>
-<option value="class 03">Hybrid</option>
+<option value="1">Remote</option>
+<option value="2">Onsite</option>
+<option value="3">Hybrid</option>
 </select>
 <i class="zmdi zmdi-chevron-down"></i>
 </div>
@@ -95,10 +106,10 @@
 <div class="form-holder" style="width:50%;">
 <select name="etype" class="form-control">
 <option value="" disabled="" selected="">Employment Type</option>
-<option value="class 01">Full-time</option>
-<option value="class 02">Part-time</option>
-<option value="class 03">Contract</option>
-<option value="class 03">Internship</option>
+<option value="1">Full-time</option>
+<option value="2">Part-time</option>
+<option value="3">Contract</option>
+<option value="3">Internship</option>
 </select>
 <i class="zmdi zmdi-chevron-down"></i>
 </div>
@@ -107,19 +118,10 @@
 </div>
 
 
-<div class="form-holder">
-<select name="atype" class="form-control">
-<option value="" disabled="" selected="">Account type</option>
-<option value="seek">Seeker</option>
-<option value="empl">Employer</option>
-</select>
-<i class="zmdi zmdi-chevron-down"></i>
-</div>
 
 
 
-
-<textarea name="descr" placeholder="job describtion" class="form-control" style="margin-top:10px;margin-bottom:10px;padding:15px;height: 130px;"></textarea>
+<textarea name="descr"   maxlength="100000" required placeholder="job describtion" class="form-control" style="margin-top:10px;margin-bottom:10px;padding:15px;height: 130px;"></textarea>
 
 
 <button name="go" type="button" style="text-align:center;color:#fff;background:#dc3545;border:0;padding:10px">Add</button>

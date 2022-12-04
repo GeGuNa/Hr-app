@@ -35,7 +35,7 @@ CREATE TABLE `company` (
   PRIMARY KEY (`cid`),
   KEY `user` (`user`),
   CONSTRAINT `company_ibfk_1` FOREIGN KEY (`user`) REFERENCES `user` (`uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `company` (
 
 LOCK TABLES `company` WRITE;
 /*!40000 ALTER TABLE `company` DISABLE KEYS */;
-INSERT INTO `company` VALUES (22,1669923218,'abaa','georgiana@top.ge',NULL,'qweqweqweqweqwe','georgia',1,'3974_1669923218119_2918581.png'),(23,1669923256,'qweqwe','qweqwe@wqeqw.ge',NULL,'qqqqqqqqq','qweqweqwe',1,'7989_1669923256059_user-vector.webp');
+INSERT INTO `company` VALUES (22,1669923218,'abaa','georgiana@top.ge',NULL,'qweqweqweqweqwe','georgia',1,'3974_1669923218119_2918581.png'),(23,1669923256,'qweqwe','qweqwe@wqeqw.ge',NULL,'qqqqqqqqq','qweqweqwe',1,'7989_1669923256059_user-vector.webp'),(24,1670024117,'wwww','weqweqw@fqweq.ge',NULL,'11111111','wwwwwwwwwwww',1,'877_1670024117345_8402_1669921927241_11607991960.jpg'),(25,1670027631,'qqqqqq','qwqwe@dqweq.ge',NULL,'wwwwwwwwww','qqqqqqqqq',1,'9947_1670027631814_9004_1669922236043_eye.webp');
 /*!40000 ALTER TABLE `company` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -95,12 +95,15 @@ CREATE TABLE `job` (
   `number` text DEFAULT NULL,
   `subject` text DEFAULT NULL,
   `desc` text DEFAULT NULL,
+  `work_type` text DEFAULT '',
+  `empl_type` text DEFAULT '',
+  `experience_time` text DEFAULT '',
   PRIMARY KEY (`jid`),
   KEY `user` (`user`),
   KEY `cid` (`cid`),
   CONSTRAINT `job_ibfk_1` FOREIGN KEY (`user`) REFERENCES `user` (`uid`),
   CONSTRAINT `job_ibfk_2` FOREIGN KEY (`cid`) REFERENCES `company` (`cid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -109,6 +112,7 @@ CREATE TABLE `job` (
 
 LOCK TABLES `job` WRITE;
 /*!40000 ALTER TABLE `job` DISABLE KEYS */;
+INSERT INTO `job` VALUES (1,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','',''),(2,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','',''),(3,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','',''),(4,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','',''),(5,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','',''),(6,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','',''),(7,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','',''),(8,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','',''),(9,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','',''),(10,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','',''),(11,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','','');
 /*!40000 ALTER TABLE `job` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -161,4 +165,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-01 23:58:46
+-- Dump completed on 2022-12-04  4:25:34

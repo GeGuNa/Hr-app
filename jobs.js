@@ -85,15 +85,71 @@ return res.redirect('/')
 }
 
 
-const qexp = req.body.exp
-const qname = req.body.name
+
+const qcomp = req.body.cid
 const qtitle= req.body.title
-const qtime = req.body.time
+const qexp = req.body.exp
+const qexpt = req.body.exp_time
 const jtype = req.body.typej
 const etype = req.body.etype
-const atype = req.body.atype
 const qdesc = req.body.descr
 
+
+let qw2zze = new Date()
+let tmqwe21213
+
+if (qtime == 1) {
+	tmqwe21213 = qw2zze.getTime()+(60*60*24*7)*1000
+} else if (qtime == 2) {
+	tmqwe21213 = qw2zze.getTime()+(60*60*24*14)*1000
+} else if (qtime == 3) {
+	tmqwe21213 = qw2zze.getTime()+(60*60*24*21)*1000
+} else if (qtime == 4) {
+	tmqwe21213 = qw2zze.getTime()+(60*60*24*28)*1000
+} else {
+	tmqwe21213 = qw2zze.getTime()+(60*60*24*35)*1000
+}
+
+
+
+
+
+/*
+
++-----------------+------------+------+-----+---------+----------------+
+| Field           | Type       | Null | Key | Default | Extra          |
++-----------------+------------+------+-----+---------+----------------+
+| jid             | bigint(32) | NO   | PRI | NULL    | auto_increment |
+| user            | bigint(32) | YES  | MUL | NULL    |                |
+| cid             | bigint(32) | YES  | MUL | NULL    |                |
+| time            | bigint(32) | YES  |     | NULL    |                |
+| expire_time     | bigint(32) | YES  |     | NULL    |                |
+| name            | text       | YES  |     | NULL    |                |
+| mail            | text       | YES  |     | NULL    |                |
+| number          | text       | YES  |     | NULL    |                |
+| subject         | text       | YES  |     | NULL    |                |
+| desc            | text       | YES  |     | NULL    |                |
+| work_type       | text       | YES  |     | ''      |                |
+| empl_type       | text       | YES  |     | ''      |                |
+| experience_time | text       | YES  |     | ''      |                |
++-----------------+------------+------+-----+---------+----------------+
+13 rows in set (0.001 sec)
+
+
+
+*/
+
+await knex('jobs').insert({
+	user: tdatausr.uid,
+	name: tdatausr.uid,
+	cid: tdatausr.uid,
+	desc: tdatausr.uid,
+	experience_time: tdatausr.uid,
+	empl_type: tdatausr.uid,
+	work_type: tdatausr.uid,
+	user: tdatausr.uid,
+	user: tdatausr.uid
+});
 
 
 
