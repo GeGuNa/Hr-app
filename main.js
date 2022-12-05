@@ -35,9 +35,9 @@ app.use(fileupl({
 
 
 app.set('views', `${__dirname}/views/`)
-app.set("view engine", "ejs")
+//app.set("view engine", "ejs")
 
-/* app.engine('html', require('ejs').renderFile); */
+app.engine('html', require('ejs').renderFile);
 
 
 app.use('/dist', express.static('dist'))
@@ -238,7 +238,7 @@ Filen.mv(`${__dirname}/pictures/${QzFlNm}`)
 }
 
 
-res.render("company_add.ejs", {title:'New company', user: tdatausr, add:'Company has been add'})
+res.render("company_add.html", {title:'New company', user: tdatausr, add:'Company has been add'})
 
 
 
@@ -253,7 +253,7 @@ if (!tusert) {
 return res.redirect('/')
 }
 
-res.render("company_add.ejs", {title:'New company', user: tdatausr})
+res.render("company_add.html", {title:'New company', user: tdatausr})
 
 
 res.end()
@@ -277,12 +277,12 @@ let qzdtwq = await knex('company').where("user",tdatausr.uid).select('*').orderB
 
 //console.log(qzdtwq[0].cid)
 
-//res.render("company_add.ejs", {title:'New company', user: tdatausr, dataF:qzdtwq})
+//res.render("company_add.html", {title:'New company', user: tdatausr, dataF:qzdtwq})
 
 
 
 
-res.render("my_company.ejs", {title:'My companies', user: tdatausr, cnt:qz.cnt, dataFetch:qzdtwq})
+res.render("my_company.html", {title:'My companies', user: tdatausr, cnt:qz.cnt, dataFetch:qzdtwq})
 
 res.end()
 })
@@ -357,7 +357,7 @@ psrq = {title:'Main', dataFetch: qzdtwq22}
 
 
 
-res.render("index.ejs", psrq)
+res.render("index.html", psrq)
 
 res.end()
 })
@@ -372,7 +372,7 @@ if (tusert == 1) {
 return res.redirect('/')
 }
 
-res.render("register.ejs", {title:'registration'})
+res.render("register.html", {title:'registration'})
 
 res.end()
 })
@@ -388,7 +388,7 @@ return res.redirect('/')
 
 
 
-//res.render("login.ejs", {error: 'qweqeqw', title:'login', user:''})
+//res.render("login.html", {error: 'qweqeqw', title:'login', user:''})
 
 let psrq
 
@@ -402,13 +402,13 @@ psrq = {title:'login', user: '124123'}
 psrq = {title:'login'}
 }
 
-res.render("login.ejs", psrq)
+res.render("login.html", psrq)
 */
 
 psrq = {title:'login'}
 
 
-res.render("login.ejs", psrq)
+res.render("login.html", psrq)
 
 
 
@@ -437,7 +437,7 @@ console.log(qz)
 */
 
 
-//res.render("login.ejs", {error: 'qweqeqw', title:'login', user:''})
+//res.render("login.html", {error: 'qweqeqw', title:'login', user:''})
 
 /*
 let us = 0
@@ -449,7 +449,7 @@ psrq = {title:'login', user: '124123'}
 psrq = {title:'login'}
 }
 
-res.render("login.ejs", psrq)
+res.render("login.html", psrq)
 */
 
 const qusrs = req.body.mail
@@ -461,7 +461,7 @@ if (qusrs === undefined || qusrp === undefined) {
 
 psrq = {title:'login', error: 'user or password is incorrect'}
 
-res.render("login.ejs", psrq)
+res.render("login.html", psrq)
 
 
 } else {
@@ -483,7 +483,7 @@ return res.redirect('/')
 psrq = {title:'login', error: 'user or password is incorrect'}
 }
 
-res.render("login.ejs", psrq)
+res.render("login.html", psrq)
 
 
 }
@@ -513,7 +513,7 @@ qz221a = await knex('user').where("uid",rquid).select('*').first()
 if (!qz221a) {
 res.write(`Profile doesn't exists`)
 } else {
-res.render('profile.ejs', {title:'profile', user: qz221a})
+res.render('profile.html', {title:'profile', user: qz221a})
 }
 
 }
@@ -547,7 +547,7 @@ psrq = {title:'Contact'}
 
 
 
-res.render("contact.ejs", psrq)
+res.render("contact.html", psrq)
 
 res.end()
 })
@@ -583,11 +583,11 @@ await knex('contact').insert({
 	desc:  qtext
 });
 
-res.render('contact.ejs', {title: 'Contact', sent: 'Your question been sent, wait soon we will answer'})
+res.render('contact.html', {title: 'Contact', sent: 'Your question been sent, wait soon we will answer'})
 
 } else {
 
-res.render('contact.ejs', {title: 'Contact',error: 'something went off'})
+res.render('contact.html', {title: 'Contact',error: 'something went off'})
 
 }
 
@@ -609,6 +609,6 @@ res.end()
 
 
 //127.0.0.1:2000
-app.listen(2000, (err) => {
+app.listen(3000, (err) => {
 	if (err)console.log(`done`)
 })

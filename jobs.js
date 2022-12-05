@@ -13,7 +13,7 @@ psrq = {title:'Jobs', user: tdatausr}
 psrq = {title:'Jobs'}
 }
 
-res.render("jobs.ejs", psrq)
+res.render("jobs.html", psrq)
 
 res.end()
 })
@@ -65,7 +65,7 @@ let psrq
 psrq = {title:'New job', user: tdatausr, cdata: qz221a}
 
 
-res.render("jobadd.ejs", psrq)
+res.render("jobadd.html", psrq)
 
 res.end()
 })
@@ -106,9 +106,11 @@ const jtype = req.body.typej
 const etype = req.body.etype
 const qdesc = req.body.descr
 
+//let qrwwarr = [qtitle,qdesc];
 
-
-//if (is_Empty())
+//if (is_Empty(qtitle,128)){
+	
+//} else if ()
 
 
 let qw2zze = new Date()

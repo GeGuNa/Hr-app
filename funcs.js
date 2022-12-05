@@ -57,29 +57,31 @@ str2.map((val) => {
 function is_Empty(str, max, min = 0) {
 
 let str2 = str	
-let res = true	
+let res = [];	
 
 if (Array.isArray(str2)) {	
 
-str2.map((val) => {
+str2.map((val)=>{
 
  if (val == undefined || val === undefined) {
-	res = false	
+		res.push(1)
  } else if (val.length<max) {
-	 res = false;
- } else  res = true;
-	
-})
+		res.push(1)
+ } else  {
+	//	
+}
 
-return res
+});
+
+if (res.length>0)return false; else  return true;
+
 } else {	
 	
-
  if (str2 == undefined || str2 === undefined) {
 	return false	
  } else if (str2.length<max) {
 	 return false;
- } else return true;
+ }  else return true;
 
  
 }
@@ -87,9 +89,9 @@ return res
 }
 
 /*
- * is_Empty('qweqwe',12)
- * is_Empty(new Array('qweqwe','qweqwe','qweqweqwe'),12)
- * is_Empty(['qweqwe','qweqwe','qweqweqwe'],15)
+ is_Empty('qweqwe',12)
+ is_Empty(new Array('qweqwe','qweqwe','qweqweqwe'),12)
+ is_Empty(['qweqwe','qweqwe','qweqweqwe'],15)
  */
 
 
