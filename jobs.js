@@ -20,6 +20,29 @@ res.end()
 
 
 
+app.get("/my", async(req, res) => {
+
+if (!tusert) {
+return res.redirect('/')
+}
+
+
+let qz = await knex("job").where("user",tdatausr.uid).select(knex.raw('count(*) as cnt')).first()
+
+//console.log(qz.cnt)
+
+
+let qzdtwq = await knex('job').where("user",tdatausr.uid).select('*').orderByRaw('jid desc limit 6');
+
+
+res.render("my_jobs.html", {title:'Job list', user: tdatausr, cnt:qz.cnt, dataFetch:qzdtwq})
+
+res.end()
+})
+
+
+
+
 app.get("/add", async(req, res) => {
 
 if (tusert == 0) {
@@ -89,14 +112,14 @@ const qcomp = req.body.cid
 const rquid = Math.abs(parseInt(qcomp)) 
 
 if (isNaN(rquid) === true || rquid == 0) {
-	return res.status(200).send('uups')
+	return res.status(200).send('uups1')
 }
 
 
 let qz221a = await knex('company').where("cid",rquid).select('*')
 
 if (!qz221a) {
-	return res.status(200).send('uups')
+	return res.status(200).send('uups2')
 }
 
 const qtitle = req.body.title
@@ -108,21 +131,37 @@ const qdesc = req.body.descr
 
 //let qrwwarr = [qtitle,qdesc];
 
-//if (is_Empty(qtitle,128)){
+console.log(qtitle.length)
+
+
+if (!is_Empty(qtitle,128)){ 
+	return res.status(200).send('uups3')
+}
+else if (!is_Empty(qexp,30)){  return res.status(200).send('uups4') }
 	
-//} else if ()
+else if (!is_Empty(qexpt,30)){ return res.status(200).send('uups5') }
+	 
+else if (!is_Empty(jtype,30)){   return res.status(200).send('uups6') }
+	
+else if (!is_Empty(etype,50)){  return res.status(200).send('uups7') } 
+	
+else if (!is_Empty(qdesc,5000)){  return res.status(200).send('uups8') }
+else { 
+	// 
+}
+	
 
 
 let qw2zze = new Date()
 let tmqwe21213
 
-if (qtime == 1) {
+if (qexpt == 1) {
 	tmqwe21213 = qw2zze.getTime()+(60*60*24*7)*1000
-} else if (qtime == 2) {
+} else if (qexpt == 2) {
 	tmqwe21213 = qw2zze.getTime()+(60*60*24*14)*1000
-} else if (qtime == 3) {
+} else if (qexpt == 3) {
 	tmqwe21213 = qw2zze.getTime()+(60*60*24*21)*1000
-} else if (qtime == 4) {
+} else if (qexpt == 4) {
 	tmqwe21213 = qw2zze.getTime()+(60*60*24*28)*1000
 } else {
 	tmqwe21213 = qw2zze.getTime()+(60*60*24*35)*1000
@@ -157,7 +196,8 @@ if (qtime == 1) {
 
 */
 
-await knex('jobs').insert({
+
+await knex('job').insert({
 	user: tdatausr.uid,
 	name: qtitle,
 	cid: rquid,
@@ -165,7 +205,7 @@ await knex('jobs').insert({
 	experience_time: qexp,
 	empl_type: etype,
 	work_type: jtype,
-	expire_time: qexpt
+	expire_time: tmqwe21213
 });
 
 

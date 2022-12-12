@@ -73,15 +73,15 @@ str2.map((val)=>{
 
 });
 
-if (res.length>0)return false; else  return true;
+if (res.length>0)return true; else  return false;
 
 } else {	
 	
  if (str2 == undefined || str2 === undefined) {
-	return false	
+	return true	
  } else if (str2.length<max) {
-	 return false;
- }  else return true;
+	 return true;
+ }  else return false;
 
  
 }
@@ -167,4 +167,4 @@ if (Tpimage.test(name)) {
 
 
 
-module.exports = { Unix_timestamp, Is_number, knex, ifImage, t_mail }
+module.exports = { Unix_timestamp, Is_number, knex, ifImage, t_mail, is_Empty }

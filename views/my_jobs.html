@@ -1,0 +1,103 @@
+<%-include("header.html") %>
+
+
+
+<div class="row">
+
+<div class="col-10">
+
+
+
+
+
+<div class="row">
+
+<h5 class="card-title" style="background-color: white;padding: 14px 13px 13px 20px;margin-top:15px;text-align:left">
+
+<span style="float:left;">My jobs (<%=cnt %>)</span>
+<a href="add" style="float:right;color: black;">Add new</a>
+</h5>
+
+
+<div class="col-12" style="margin-top:20px;">
+
+<div class="row g-0  position-relative">
+
+<%
+
+dataFetch.map(function(val,index){ 
+
+let qwe = new Date(val.expire_time);
+
+let d = qwe.getDate()
+let y = qwe.getFullYear()
+let m = qwe.getMonth()
+
+%>
+
+<div class="d-flex position-relative bg-white" style="margin-bottom:10px;padding:10px;">
+  <img src="/get_pic/<%=val.cid %>" style="max-width: 10%;" class="flex-shrink-0 me-3" alt="pic of company">
+  <div>
+    <h5 class="mt-0"><%=val.name %></h5>
+    <p style="word-break:break-all;"><%=val.desc %></p>
+   >> <a href="#" style="color:blue;" class="stretched-link">Observe</a>
+  </div>
+</div>
+
+
+<% }) %>
+  
+  
+  
+  </div>
+   
+  </div>
+ 
+ 
+ 
+  
+</div>
+
+</div>
+
+
+<!-- right side of menu -->
+<div class="col-2" style="margin-top:20px;margin-bottom:20px;padding-right:4px;padding-right: 22px;">
+
+
+
+<ul class="list-group">
+
+    <h5 class="list-group-item card-title">Ads</h5>
+
+  <li class="list-group-item">An item</li>
+  <li class="list-group-item">A second item</li>
+  <li class="list-group-item">A third item</li>
+  <li class="list-group-item">A fourth item</li>
+  <li class="list-group-item">And a fifth one</li>
+</ul>
+
+
+
+<ul class="list-group" style="margin-top:20px;">
+
+    <h5 class="list-group-item card-title">Random vacancies</h5>
+
+  <li class="list-group-item">An item</li>
+  <li class="list-group-item">A second item</li>
+  <li class="list-group-item">A third item</li>
+  <li class="list-group-item">A fourth item</li>
+  <li class="list-group-item">And a fifth one</li>
+</ul>
+
+
+</div>
+<!--  -->
+
+
+</div>
+
+
+
+
+<%-include("footer.html") %>
