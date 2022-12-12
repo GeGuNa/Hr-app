@@ -6,6 +6,12 @@
     border-color: #b79f9f !important;
 }
 
+.thing {
+   -webkit-appearance: none;
+   -moz-appearance:    none;
+   appearance:         none;
+}
+
 </style>
 
 
@@ -53,7 +59,7 @@
 
 <div class="form-row">
 <input type="text" class="form-control" name="subj" placeholder="Subject" required>
-<input type="number" class="form-control" name="num" placeholder="Number" required>
+<input type="text" pattern="^[+][0-9]+$" class="form-control" name="num" placeholder="Number" required>
 </div>
 
 
