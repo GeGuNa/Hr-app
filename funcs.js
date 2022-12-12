@@ -13,6 +13,24 @@ var SpecialSymbols =  {
 };
 
 
+function Month(){
+	
+var mL = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+var mS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+
+
+let qwe = new Date();
+
+let d = qwe.getDate()
+let y = qwe.getFullYear()
+let m = qwe.getMonth()
+
+
+return mS[qwe.getMonth()]
+}
+
+
+
 /*
 function is_Empty(str, max, min = 0) {
 	
