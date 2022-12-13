@@ -5,6 +5,8 @@ const escapeHTML = require('escape-html')
 const job1253 = require('./jobs')
 const app = express()
 
+const prt = 2000
+
 
 var mime = require('mime-types')
 
@@ -599,6 +601,37 @@ res.end()
 
 
 
+/********mesage******/
+
+
+
+app.get("/messages", async(req, res) => {
+
+
+if (tusert == 0) {
+return res.redirect('/')
+}
+
+
+
+let psrq = {title:'Contact', user: tdatausr}
+
+
+
+
+res.render(`mess.html`, psrq)
+
+
+
+
+
+res.end()
+})
+
+
+/**************/
+
+
 
 app.get("*", (req, res) => {
 
@@ -608,7 +641,7 @@ res.end()
 })
 
 
-//127.0.0.1:2000
-app.listen(3000, (err) => {
+//127.0.0.1:2000 (prt)
+app.listen(prt, (err) => {
 	if (err)console.log(`done`)
 })
