@@ -7,11 +7,20 @@ app.get("/", async(req, res) => {
 
 let psrq
 
+
+
+let qzdtwq22 = await knex('job').select('*').orderByRaw('`jid` desc limit 6');
+
 if (tusert == 1) {
-psrq = {title:'Jobs', user: tdatausr}
+psrq = {title:'Jobs', user: tdatausr, dataFetch: qzdtwq22}
 } else {
-psrq = {title:'Jobs'}
+psrq = {title:'Jobs', dataFetch: qzdtwq22}
 }
+
+
+
+
+
 
 res.render("jobs.html", psrq)
 
