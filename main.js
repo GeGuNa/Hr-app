@@ -632,6 +632,26 @@ res.end()
 /**************/
 
 
+app.get("/candidates", async(req, res) => {
+
+
+
+let qz = await knex("user").where("acc_type",'seeker').select(knex.raw('count(*) as cnt')).first()
+
+let qzdtwq = await knex('user').where("acc_type",'seeker').select('*').orderByRaw('uid desc limit 100');
+
+
+
+res.render("candidates.html", {title:'Candidates', user: tdatausr, cnt:qz.cnt, dataFetch:qzdtwq})
+
+res.end()
+})
+
+
+
+
+
+
 
 app.get("*", (req, res) => {
 
