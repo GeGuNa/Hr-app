@@ -8,6 +8,11 @@
     cursor: pointer;
 }
 
+.parlort {
+color: #6c757d!important;
+font-size: 13px;
+}
+
 
 #pagination > a {
 margin-left:10px;

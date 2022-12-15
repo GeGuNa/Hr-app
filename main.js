@@ -649,6 +649,20 @@ res.end()
 
 
 
+app.get("/parlor", async(req, res) => {
+
+
+if (tusert == 0) {
+return res.redirect('/')
+}
+
+
+res.render("parlor.html", {title:'Private page', user: tdatausr})
+
+res.end()
+})
+
+
 
 
 
