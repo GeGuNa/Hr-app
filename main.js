@@ -648,6 +648,26 @@ res.end()
 })
 
 
+app.get("/employers", async(req, res) => {
+
+
+
+let qw21qeqwez = await knex("company").count("").first()
+
+//console.log(qw21qeqwez['count(*)'])
+
+let qzdtwq = await knex('company').select('*').orderByRaw('cid desc limit 100');
+
+
+
+res.render("employers.html", {title:'Employers', user: tdatausr, cnt: qw21qeqwez['count(*)'], dataFetch:qzdtwq})
+
+res.end()
+})
+
+
+
+
 
 app.get("/parlor", async(req, res) => {
 
@@ -675,7 +695,7 @@ res.end()
 })
 
 
-//127.0.0.1:2000 (prt)
-app.listen(prt, (err) => {
+//127.0.0.1:${prt} (prt)
+app.listen(prt, async(err) => {
 	if (err)console.log(`done`)
 })
