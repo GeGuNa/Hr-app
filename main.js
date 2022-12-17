@@ -605,7 +605,7 @@ res.end()
 
 
 
-app.get("/qw2", async(req, res) => {
+app.get("/mcntlst", async(req, res) => {
 	
 if (tusert == 0) {
 return res.redirect('/')
@@ -669,19 +669,35 @@ res.end()
 })
 
 
-app.post("/cnt_list", async(req, res) => {
+app.get("/text/:id", async(req, res) => {
 
 
 if (tusert == 0) {
 return res.redirect('/')
 }
 
-
-let qz221a = await knex('message_contacts').where("me",tdatausr.uid).select('*').orderBy('when');
-
+let qzprof = req.params.id;
 
 
-res.status(200).send(qz221a)
+const rquid = Math.abs(parseInt(req.params.id)) 
+
+if (isNaN(rquid) === true || rquid == 0) {
+return res.redirect('/')
+}
+
+
+let qz221a = await knex('user').where("uid",qzprof).first();
+
+
+if (!qz221a) {
+return res.redirect('/')
+}
+
+
+
+let psrq = {title:'Messaging', user: tdatausr, dprof: qz221a}
+
+res.render(`text.html`, psrq)
 
 res.end()
 })

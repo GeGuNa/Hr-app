@@ -1,0 +1,204 @@
+<%-include("header.html") %>
+
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+<div class="row">
+
+<div class="col-10">
+
+
+
+
+
+<div class="row">
+
+<h5 class="card-title" style="background-color: white;padding:10px 0 10px 20px;margin-top:15px;text-align:left">Messaging with <a href="/profile/<%=dprof.uid%>"><span style="color:blue;"><%=dprof.name%></span></a></h5>
+
+<div class="col-12">
+
+<div class="list-group w-auto" style="margin-top:20px;margin-bottom:20px;" id="lsts2"> 
+
+
+
+<form style="background:#fff;padding: 16px;">
+    <textarea class="form-control" style="padding:10px;resize:none;height:80px;border-color: blueviolet !important;" placeholder="say something"></textarea>
+    <button class="commentPost w-100" style="padding:10px;">Post</button>
+</form>
+
+
+
+  
+  
+  </div>
+   
+  </div>
+ 
+ 
+<!-- messaging -->
+
+
+<div class="col-12">
+
+<div class="list-group w-auto" style="margin-top:20px;margin-bottom:20px;" id="lsts2"> 
+
+
+
+
+  <a href="25" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+    <img src="/get_pic/25" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+    <div class="d-flex gap-2 w-100 justify-content-between">
+      <div>
+        <h6 class="mb-0">qqqqqq</h6>
+        <p class="mb-0 opacity-75">wwwwwwwwww</p>
+      </div>
+      <small class="opacity-50 text-nowrap"><img src="/icons/icons8-trash-can-96.png" width="30"></small>
+    </div>
+  </a>
+
+
+
+
+  <a href="24" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+    <img src="/get_pic/24" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+    <div class="d-flex gap-2 w-100 justify-content-between">
+      <div>
+        <h6 class="mb-0">wwww</h6>
+        <p class="mb-0 opacity-75">11111111</p>
+      </div>
+      <small class="opacity-50 text-nowrap"><img src="/icons/icons8-trash-can-96.png" width="30"></small>
+    </div>
+  </a>
+
+
+
+
+  <a href="23" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+    <img src="/get_pic/23" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+    <div class="d-flex gap-2 w-100 justify-content-between">
+		
+      <div>
+        <h6 class="mb-0">qweqwe</h6>
+        <p class="mb-0 opacity-75">qqqqqqqqq</p>
+      </div>
+      
+      <small class="opacity-50 text-nowrap"><img src="/icons/icons8-trash-can-96.png" width="30"></small>
+    </div>
+  </a>
+
+
+
+
+  <a href="22" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+    <div class="d-flex gap-2 w-100 justify-content-between">
+      <small class="opacity-50 text-nowrap"><img src="/icons/icons8-trash-can-96.png" width="30"></small>
+       <div>  
+        <h6 style="float:right;" class="mb-0">abaa</h6>
+        <p class="mb-0 opacity-75">qweqweqweqweqwe</p>
+      </div>
+    </div> 
+    <img src="/get_pic/22" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+  </a>
+
+
+  <a href="22" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+    <div class="d-flex gap-2 w-100 justify-content-between">
+      <small class="opacity-50 text-nowrap"><img src="/icons/icons8-trash-can-96.png" width="30"></small>
+       <div>  
+        <h6 style="float:right;" class="mb-0">abწწწწწწწწწწწaa</h6>
+        <p class="mb-0 opacity-75">წექწექწექწექწექწექწექწექწექწექწექწექწექწექწექწე</p>
+      </div>
+    </div> 
+    <img src="/icons/user-vector.webp" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+  </a>
+
+
+
+  <a href="22" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+    <div class="d-flex gap-2 w-100 justify-content-between">
+      <small class="opacity-50 text-nowrap"><img src="/icons/icons8-trash-can-96.png" width="30"></small>
+       <div>  
+        <h6 style="float:right;" class="mb-0">qweqweqweqweabaa</h6>
+        <p class="mb-0 opacity-75">წექწექწექწექწექწექწექწექწექწექწექწექწექწექწექწე</p>
+      </div>
+    </div> 
+    <img src="/icons/283854053_1318054085386468_1628634345940470594_n.jpg" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+  </a>
+
+
+  
+  
+  
+  </div>
+   
+   
+ <div class="d-flex justify-content-center" id="pagination" style="background: white;padding:10px;margin-bottom:10px;">
+  
+  <a style="background:#aaa !important;color: white;">prev</a>
+  
+  <a class="" style="  background-color: #ff5f00!important;color: #fff!important;cursor: pointer;">1</a>
+ 
+ <a class="clr" style="cursor: pointer;border: 0.0625rem solid #9d8f8f;
+    ">2</a>
+  <a class="clr" style="cursor: pointer;border: 0.0625rem solid #9d8f8f;
+    ">3</a>
+     <a class="clr" style="cursor: pointer;border: 0.0625rem solid #9d8f8f;
+    ">4</a>
+     <a class="clr" style="cursor: pointer;border: 0.0625rem solid #9d8f8f;
+    ">5</a>
+    <a style="background:#aaa !important;color: white;">...</a>
+   <a style="color: #000!important;cursor: pointer;border: 0.0625rem solid #9d8f8f;
+    ">105</a>
+      <a style="color: #000!important;cursor: pointer;border: 0.0625rem solid #9d8f8f;
+    ">next</a>
+    
+  </div>  
+   
+   
+  </div>
+
+
+
+
+
+
+<!-- end of messaging --> 
+ 
+ 
+  
+</div>
+
+</div>
+
+
+<%-include("right.html") %>
+
+
+</div>
+
+<script>
+
+function tmqwe(w22){
+	
+let qwe = new Date(w22);
+
+let d = qwe.getDate()
+let y = qwe.getFullYear()
+let m = qwe.getMonth()
+var mS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+	 
+return `${d} ${mS[m]} ${y}`;	 
+}
+
+</script>
+
+
+<%-include("footer.html") %>
