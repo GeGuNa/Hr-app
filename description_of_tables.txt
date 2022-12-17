@@ -1,0 +1,116 @@
+MariaDB [HRG]> show tables
+    -> ;
++------------------+
+| Tables_in_HRG    |
++------------------+
+| company          |
+| contact          |
+| job              |
+| message          |
+| message_contacts |
+| user             |
++------------------+
+6 rows in set (0.000 sec)
+
+MariaDB [HRG]> describe company;
++-------------+------------+------+-----+---------+----------------+
+| Field       | Type       | Null | Key | Default | Extra          |
++-------------+------------+------+-----+---------+----------------+
+| cid         | bigint(32) | NO   | PRI | NULL    | auto_increment |
+| time        | bigint(32) | YES  |     | NULL    |                |
+| name        | text       | YES  |     | NULL    |                |
+| mail        | text       | YES  |     | NULL    |                |
+| number      | text       | YES  |     | NULL    |                |
+| description | text       | YES  |     | NULL    |                |
+| country     | text       | YES  |     | NULL    |                |
+| user        | bigint(32) | YES  | MUL | NULL    |                |
+| picurl      | text       | YES  |     | ''      |                |
++-------------+------------+------+-----+---------+----------------+
+9 rows in set (0.001 sec)
+
+MariaDB [HRG]> describe contact;
++---------+------------+------+-----+---------------------+----------------+
+| Field   | Type       | Null | Key | Default             | Extra          |
++---------+------------+------+-----+---------------------+----------------+
+| post_id | bigint(32) | NO   | PRI | NULL                | auto_increment |
+| time    | text       | YES  |     | current_timestamp() |                |
+| name    | text       | YES  |     | NULL                |                |
+| mail    | text       | YES  |     | NULL                |                |
+| number  | text       | YES  |     | NULL                |                |
+| subject | text       | YES  |     | NULL                |                |
+| desc    | text       | YES  |     | NULL                |                |
++---------+------------+------+-----+---------------------+----------------+
+7 rows in set (0.001 sec)
+
+MariaDB [HRG]> describe job;
++-----------------+------------+------+-----+---------+----------------+
+| Field           | Type       | Null | Key | Default | Extra          |
++-----------------+------------+------+-----+---------+----------------+
+| jid             | bigint(32) | NO   | PRI | NULL    | auto_increment |
+| user            | bigint(32) | YES  | MUL | NULL    |                |
+| cid             | bigint(32) | YES  | MUL | NULL    |                |
+| time            | bigint(32) | YES  |     | NULL    |                |
+| expire_time     | bigint(32) | YES  |     | NULL    |                |
+| name            | text       | YES  |     | NULL    |                |
+| mail            | text       | YES  |     | NULL    |                |
+| number          | text       | YES  |     | NULL    |                |
+| subject         | text       | YES  |     | NULL    |                |
+| desc            | text       | YES  |     | NULL    |                |
+| work_type       | text       | YES  |     | ''      |                |
+| empl_type       | text       | YES  |     | ''      |                |
+| experience_time | text       | YES  |     | ''      |                |
++-----------------+------------+------+-----+---------+----------------+
+13 rows in set (0.001 sec)
+
+MariaDB [HRG]> describe message;
++---------+------------+------+-----+---------+----------------+
+| Field   | Type       | Null | Key | Default | Extra          |
++---------+------------+------+-----+---------+----------------+
+| mid     | bigint(32) | NO   | PRI | NULL    | auto_increment |
+| user    | bigint(32) | YES  | MUL | NULL    |                |
+| whom    | bigint(32) | YES  | MUL | NULL    |                |
+| text    | text       | YES  |     | NULL    |                |
+| deleted | bigint(32) | YES  |     | NULL    |                |
+| when    | bigint(32) | YES  |     | NULL    |                |
++---------+------------+------+-----+---------+----------------+
+6 rows in set (0.001 sec)
+
+MariaDB [HRG]> describe message_contacts;
++---------+------------+------+-----+---------+----------------+
+| Field   | Type       | Null | Key | Default | Extra          |
++---------+------------+------+-----+---------+----------------+
+| cid     | bigint(32) | NO   | PRI | NULL    | auto_increment |
+| me      | bigint(32) | YES  | MUL | NULL    |                |
+| you     | bigint(32) | YES  | MUL | NULL    |                |
+| type    | text       | YES  |     | NULL    |                |
+| deleted | bigint(32) | YES  |     | NULL    |                |
+| when    | bigint(32) | YES  |     | NULL    |                |
+| post    | bigint(32) | YES  |     | NULL    |                |
++---------+------------+------+-----+---------+----------------+
+7 rows in set (0.001 sec)
+
+MariaDB [HRG]> describe user;
++------------+--------------------------+------+-----+---------+----------------+
+| Field      | Type                     | Null | Key | Default | Extra          |
++------------+--------------------------+------+-----+---------+----------------+
+| uid        | bigint(32)               | NO   | PRI | NULL    | auto_increment |
+| name       | text                     | YES  |     | NULL    |                |
+| surn       | text                     | YES  |     | NULL    |                |
+| city       | text                     | YES  |     | NULL    |                |
+| skype      | text                     | YES  |     | NULL    |                |
+| telegram   | text                     | YES  |     | NULL    |                |
+| twitter    | text                     | YES  |     | NULL    |                |
+| mail       | varchar(256)             | YES  | UNI | NULL    |                |
+| usrid      | text                     | YES  |     | NULL    |                |
+| country    | text                     | YES  |     | NULL    |                |
+| number     | text                     | YES  |     | NULL    |                |
+| gender     | set('male','female')     | YES  |     | male    |                |
+| acc_type   | set('employer','seeker') | YES  |     | seeker  |                |
+| reg_time   | bigint(32)               | YES  |     | 0       |                |
+| last_visit | bigint(32)               | YES  |     | 0       |                |
+| on_site    | bigint(32)               | YES  |     | 0       |                |
+| password   | text                     | YES  |     | '0'     |                |
++------------+--------------------------+------+-----+---------+----------------+
+17 rows in set (0.001 sec)
+
+MariaDB [HRG]> 
