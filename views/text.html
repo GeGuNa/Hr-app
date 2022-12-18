@@ -29,9 +29,9 @@
 
 
 
-<form style="background:#fff;padding: 16px;">
-    <textarea class="form-control" style="padding:10px;resize:none;height:80px;border-color: blueviolet !important;" placeholder="say something"></textarea>
-    <button class="commentPost w-100" style="padding:10px;">Post</button>
+<form method="get" action="/text/<%=dprof.uid%>" style="background:#fff;padding: 16px;">
+    <textarea name="text" minlength="1" maxlength="10000" required class="form-control" style="padding:10px;resize:none;height:80px;border-color: blueviolet !important;" placeholder="say something"></textarea>
+    <button class="commentPost w-100" style="padding:10px;" name="sbmt" value="post">Post</button>
 </form>
 
 
