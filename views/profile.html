@@ -25,7 +25,12 @@
   <a style="color: #282525;" href="/jobs/my" class=""> My jobs</a> | <a style="color: #282525;" href="/jobs/add" class=""> New</a>
   </span>
   <a href="/my_company" class="">My companies</a>
-  <a href="/messages" class="">Messages</a>
+  
+  <% if (dataFetch.uid !== user.uid) { %>
+  <a href="/text/<%=user.uid%>" class="">Send a message</a>
+   <% } else { %>
+	  <a href="/messages" class="">Messages</a> 
+   <% } %>  
   <a href="/parlor" class="">Settings</a>
   <a href="#" class="">Exit</a>
 </div>

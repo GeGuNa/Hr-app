@@ -515,7 +515,7 @@ qz221a = await knex('user').where("uid",rquid).select('*').first()
 if (!qz221a) {
 res.write(`Profile doesn't exists`)
 } else {
-res.render('profile.html', {title:'profile', user: qz221a})
+res.render('profile.html', {title:'profile', user: qz221a, dataFetch: tdatausr})
 }
 
 }
@@ -696,6 +696,10 @@ return res.redirect('/')
 
 let qzprof = req.params.id;
 
+
+if (qzprof == tdatausr.uid ) {
+	return res.redirect('/')
+}
 
 const rquid = Math.abs(parseInt(req.params.id)) 
 
