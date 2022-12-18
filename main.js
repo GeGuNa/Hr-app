@@ -669,6 +669,24 @@ res.end()
 })
 
 
+/*
+app.get("/text21", async(req, res) => {
+
+
+let QPrq = req.query.text || "";
+let QPrq = req.query.sbmt || "";
+
+
+
+console.log(QPrq)
+
+res.send('qweqweq')
+
+res.end()
+});
+*/
+
+
 app.get("/text/:id", async(req, res) => {
 
 
@@ -692,6 +710,26 @@ let qz221a = await knex('user').where("uid",qzprof).first();
 if (!qz221a) {
 return res.redirect('/')
 }
+
+
+
+let QPrq_T = req.query.text || "";
+let QPrq_S = req.query.sbmt || "";
+
+
+if (QPrq_S.length>2) {
+	
+await knex('message').insert({
+user: tdatausr.uid,
+whom: qzprof,
+text: QPrq_T,
+when: new Date().getTime()
+});
+	
+	return res.redirect(`/text/${rquid}`);
+	
+}
+
 
 
 
