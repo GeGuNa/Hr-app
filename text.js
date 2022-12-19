@@ -133,10 +133,28 @@ when: new Date().getTime()
 	
 }
 
+const  qztxtlst = await knex('message')
+  .where({
+	  user:tdatausr.uid, 
+	  whom:rquid
+	  })
+  .orWhere({
+	  user: rquid, 
+	  whom: tdatausr.uid
+	  })
+  .select('*').orderBy('mid','desc').limit(10);
 
 
+//console.log(qztxtlst)
 
-let psrq = {title:'Messaging', user: tdatausr, dprof: qz221a}
+let psrq = {title:'Messaging', user: tdatausr, dprof: qz221a, chzda123: qztxtlst}
+
+
+/*
+ 
+insert into `message` (`user`,`whom`, `when`, `text`) values('4','1','160000000', "ახალუუუუუ");
+
+*/
 
 res.render(`text.html`, psrq)
 

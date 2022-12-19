@@ -29,7 +29,7 @@
 
 
 
-<form method="get" action="/text/<%=dprof.uid%>" style="background:#fff;padding: 16px;">
+<form method="get" action="/messages/<%=dprof.uid%>" style="background:#fff;padding: 16px;">
     <textarea name="text" minlength="1" maxlength="10000" required class="form-control" style="padding:10px;resize:none;height:80px;border-color: blueviolet !important;" placeholder="say something"></textarea>
     <button class="commentPost w-100" style="padding:10px;" name="sbmt" value="post">Post</button>
 </form>
@@ -51,89 +51,41 @@
 <div class="list-group w-auto" style="margin-top:20px;margin-bottom:20px;" id="lsts2"> 
 
 
+<% 
+
+chzda123.map(function(val,index){ 
 
 
-  <a href="25" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+if (val.user != user.uid) { 
+	
+%>
+
+  <a href="<%=val.mid%>" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
     <img src="/get_pic/25" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
     <div class="d-flex gap-2 w-100 justify-content-between">
       <div>
         <h6 class="mb-0">qqqqqq</h6>
-        <p class="mb-0 opacity-75">wwwwwwwwww</p>
+        <p class="mb-0 opacity-75"><%=val.text%></p>
       </div>
       <small class="opacity-50 text-nowrap"><img src="/icons/icons8-trash-can-96.png" width="30"></small>
     </div>
   </a>
 
+<% } else { %>
 
 
-
-  <a href="24" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-    <img src="/get_pic/24" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
-    <div class="d-flex gap-2 w-100 justify-content-between">
-      <div>
-        <h6 class="mb-0">wwww</h6>
-        <p class="mb-0 opacity-75">11111111</p>
-      </div>
-      <small class="opacity-50 text-nowrap"><img src="/icons/icons8-trash-can-96.png" width="30"></small>
-    </div>
-  </a>
-
-
-
-
-  <a href="23" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-    <img src="/get_pic/23" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
-    <div class="d-flex gap-2 w-100 justify-content-between">
-		
-      <div>
-        <h6 class="mb-0">qweqwe</h6>
-        <p class="mb-0 opacity-75">qqqqqqqqq</p>
-      </div>
-      
-      <small class="opacity-50 text-nowrap"><img src="/icons/icons8-trash-can-96.png" width="30"></small>
-    </div>
-  </a>
-
-
-
-
-  <a href="22" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-    <div class="d-flex gap-2 w-100 justify-content-between">
-      <small class="opacity-50 text-nowrap"><img src="/icons/icons8-trash-can-96.png" width="30"></small>
-       <div>  
-        <h6 style="float:right;" class="mb-0">abaa</h6>
-        <p class="mb-0 opacity-75">qweqweqweqweqwe</p>
-      </div>
-    </div> 
-    <img src="/get_pic/22" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
-  </a>
-
-
-  <a href="22" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-    <div class="d-flex gap-2 w-100 justify-content-between">
-      <small class="opacity-50 text-nowrap"><img src="/icons/icons8-trash-can-96.png" width="30"></small>
-       <div>  
-        <h6 style="float:right;" class="mb-0">abწწწწწწწწწწწaa</h6>
-        <p class="mb-0 opacity-75">წექწექწექწექწექწექწექწექწექწექწექწექწექწექწექწე</p>
-      </div>
-    </div> 
-    <img src="/icons/user-vector.webp" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
-  </a>
-
-
-
-  <a href="22" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+  <a href="<%=val.mid%>" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
     <div class="d-flex gap-2 w-100 justify-content-between">
       <small class="opacity-50 text-nowrap"><img src="/icons/icons8-trash-can-96.png" width="30"></small>
        <div>  
         <h6 style="float:right;" class="mb-0">qweqweqweqweabaa</h6>
-        <p class="mb-0 opacity-75">წექწექწექწექწექწექწექწექწექწექწექწექწექწექწექწე</p>
+        <p class="mb-0 opacity-75"><%=val.text%></p>
       </div>
     </div> 
     <img src="/icons/283854053_1318054085386468_1628634345940470594_n.jpg" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
   </a>
 
-
+<% } }) %>
   
   
   

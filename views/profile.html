@@ -27,7 +27,7 @@
   <a href="/my_company" class="">My companies</a>
   
   <% if (dataFetch.uid !== user.uid) { %>
-  <a href="/text/<%=user.uid%>" class="">Send a message</a>
+  <a href="/messages/<%=user.uid%>" class="">Send a message</a>
    <% } else { %>
 	  <a href="/messages" class="">Messages</a> 
    <% } %>  
