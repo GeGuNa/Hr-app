@@ -55,14 +55,44 @@ return `${d} ${mS[m]} ${y}`;
         <h6 class="mb-0"><%=usrdata.name%></h6>
         <small class="opacity-50 text-nowrap" style="color:blue;"><%=tmqw123123e(jdata.time);%></small>
       </div>
-      <div><img style="width:30px" src="/icons/text.png"></div>
+      <% if (usrdata.uid != user.uid) { %>
+      <div><img id="cntt" style="width:30px" src="/icons/text.png"></div>
+      <% } %>
     </div>
   </a>
 
 <div style="background-color: white;padding:10px;">
 	<b>Description:</b><br/>
 <p class="mb-0 opacity-75" style="word-break:break-all;"><%=jdata.desc%></p>
+
+<br/>
+	<b>When:</b> <%=tmqw123123e(jdata.time);%>
+<br/>
+	<b>Experience:</b> <%=jdata.experience_time%>
+
+
+
+
+
+<p><p/>
+
+<b>Company link:</b>
+<span class="mb-0 opacity-75" style="word-break:break-all;"><a href="#">Cmpny.com</a></span>
+
+
+
+
+
+
  </div>
+  
+  
+   <% if (usrdata.uid != user.uid) { %>
+<div class="commentBox">
+<button id="texting" class="commentPost w-100" style="padding:10px;">Send a message</button>
+</div>
+  
+ <% } %> 
   
   </div>
    
@@ -81,6 +111,18 @@ return `${d} ${mS[m]} ${y}`;
 
 </div>
 
+
+<script>
+
+$("#texting").click(function() {
+	window.location = "/messages/" +<%=jdata.user;%>
+});
+
+$("#cntt").click(function() {
+	window.location = "/messages/" +<%=jdata.user;%>
+});
+
+</script>
 
 
 
