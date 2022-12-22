@@ -37,11 +37,16 @@ let m = qwe.getMonth()
 
 <div class="d-flex position-relative bg-white" style="margin-bottom:10px;padding:10px;">
   <img src="/get_pic/<%=val.cid %>" style="max-width: 10%;" class="flex-shrink-0 me-3" alt="pic of company">
+  
   <div>
     <h5 class="mt-0"><%=val.name %></h5>
     <p style="word-break:break-all;"><%=val.desc %></p>
-   >> <a href="#" style="color:blue;" class="stretched-link">Observe</a>
+   >> <a href="/job/<%=val.jid %>" style="color:blue;" class="stretched-link">Observe</a>
   </div>
+  
+  <div class="pright"><img style="width:25px;" src="/icons/icons8-trash-can-96.png"></div>
+  
+  
 </div>
 
 
