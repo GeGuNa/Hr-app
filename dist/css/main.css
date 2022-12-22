@@ -1,4 +1,13 @@
 
+a { 
+color: #0a66c2 !important;
+}
+
+#ftrlnk > div > a {
+color:white !important;
+}
+
+
 .serverApp {
     padding: 12px 1.8125rem;
     border-radius: 1.1rem;
