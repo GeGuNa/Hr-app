@@ -14,6 +14,21 @@ font-size: 13px;
 }
 
 
+.p42w2141 {
+margin-top:15px;
+display:inline-block;
+background-color: white;
+padding: 10px 10px 10px 26px;
+}
+
+.pright {
+float:right;
+}
+
+.pleft {
+float:left;
+}
+
 #pagination > a {
 margin-left:10px;
 text-decoration: none;

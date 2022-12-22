@@ -1,0 +1,87 @@
+<%-include("header.html") %>
+
+
+<%
+
+
+function tmqw123123e(w22){
+	
+let qwe = new Date(w22);
+
+let d = qwe.getDate()
+let y = qwe.getFullYear()
+let m = qwe.getMonth()
+var mS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+	 
+return `${d} ${mS[m]} ${y}`;	 
+}
+
+
+
+%>
+
+
+<div class="row">
+
+<div class="col-10">
+
+
+
+<div class="row">
+
+
+
+<div class="p42w2141">
+	
+	<div class="pleft">
+<img src="/get_pic/<%=jdata.cid %>" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0"> 	<a style="color:blue;" href="/company/<%=cdata.cid%>"><%=cdata.name%></a>
+</div>
+	
+<div class="pright">
+	[Job ID: <span style="color:blue;"><%=jdata.jid%></span>]
+</div>
+
+
+</div>
+
+<div class="col-12">
+
+<div class="list-group w-auto" style="margin-top:20px;margin-bottom:20px;" id="lsts2"> 
+
+  <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+    <img src="/icons/2918581.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+    <div class="d-flex gap-2 w-100 justify-content-between">
+      <div>
+        <h6 class="mb-0"><%=usrdata.name%></h6>
+        <small class="opacity-50 text-nowrap" style="color:blue;"><%=tmqw123123e(jdata.time);%></small>
+      </div>
+      <div><img style="width:30px" src="/icons/text.png"></div>
+    </div>
+  </a>
+
+<div style="background-color: white;padding:10px;">
+	<b>Description:</b><br/>
+<p class="mb-0 opacity-75" style="word-break:break-all;"><%=jdata.desc%></p>
+ </div>
+  
+  </div>
+   
+  </div>
+ 
+ 
+ 
+  
+</div>
+
+</div>
+
+
+<%-include("right.html") %>
+
+
+</div>
+
+
+
+
+<%-include("footer.html") %>

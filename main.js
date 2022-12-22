@@ -3,6 +3,7 @@ const cookieParser = require('cookie-parser')
 const fileupl = require('express-fileupload')
 const escapeHTML = require('escape-html')
 const job1253 = require('./jobs')
+const job125333 = require('./job')
 const text1254 = require('./text')
 const app = express()
 
@@ -103,6 +104,7 @@ next()
 
 app.use('/jobs', job1253)
 app.use('/messages', text1254)
+app.use('/job', job125333)
 
 
 
