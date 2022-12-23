@@ -24,6 +24,9 @@ app.use(express.urlencoded({extended: true}));
 app.use(cookieParser())
 
 
+
+
+
 app.use(session({
   secret: 'whocares',
   resave: false,
@@ -79,6 +82,14 @@ tdatausr = await knex('user').where({
 //const qzdd = await knex('user');
 
 //console.log(await knex('user').where('uid',1).first());
+
+
+ //console.dir(req.params.name)
+
+
+
+
+
 
 next()
 })

@@ -73,7 +73,14 @@ console.log(qz221a)
 
 
 
-let psrq = {title:'Job details', user: tdatausr, jdata: qz221a, cdata: cmpnid, usrdata: jpostuser}
+let psrq = {
+	title:'Job details', 
+	user: tdatausr, 
+	jdata: qz221a, 
+	cdata: cmpnid, 
+	usrdata: jpostuser, 
+	ptqwe2: req.baseUrl
+}
 
 
 res.render("job.html", psrq)

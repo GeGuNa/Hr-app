@@ -7,6 +7,9 @@ color: #0a66c2 !important;
 color:white !important;
 }
 
+#p_rel {
+position:relative;
+}
 
 .serverApp {
     padding: 12px 1.8125rem;

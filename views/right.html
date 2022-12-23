@@ -13,7 +13,7 @@
 </ul>
 
 
-
+<% if (!locals.ptqwe2) { %>
 <ul class="list-group" style="margin-top:20px;">
 
     <h5 class="list-group-item card-title">Random vacancies</h5>
@@ -23,7 +23,74 @@
   <li class="list-group-item">A third item</li>
   <li class="list-group-item">A fourth item</li>
   <li class="list-group-item">And a fifth one</li>
+  
+  
+  
 </ul>
+
+
+<% } %>
+
+
+
+<% if (locals.ptqwe2 == '/job') { %>
+	
+<ul class="list-group" style="margin-top:20px;">
+
+    <h5 class="list-group-item card-title">Similar vacancies</h5>
+
+  <li class="list-group-item">
+  <a href="#">Ruby developer </a> 
+  <div>
+ <a href="#"><img src="/icons/icons8-map-24.png" style="height: 14px;margin-top: -3px;"/> </a> 
+  <span style="color: blue;">Tbilisi</span><br/>
+  <span style="color: maroon;"> <a href="#">Nvidea corp </a> </span>
+  </div> 
+  </li>
+
+  <li class="list-group-item">
+  <a href="#">C++ developer </a> 
+  <div>
+ <a href="#"><img src="/icons/icons8-map-24.png" style="height: 14px;margin-top: -3px;"/> </a> 
+  <span style="color: blue;">Batumi</span><br/>
+  <span style="color: maroon;"> <a href="#">Micro corp </a> </span>
+  </div> 
+  </li>
+
+
+
+  <li class="list-group-item">
+  <a href="#">C developer </a> 
+  <div>
+ <a href="#"><img src="/icons/icons8-map-24.png" style="height: 14px;margin-top: -3px;"/> </a> 
+  <span style="color: blue;">Tbilisi/Remote</span><br/>
+  <span style="color: maroon;"> <a href="#">Alibuss </a> </span>
+  </div> 
+  </li>
+
+
+  <li class="list-group-item">
+  <a href="#">SQL developer </a> 
+  <div>
+ <a href="#"><img src="/icons/icons8-map-24.png" style="height: 14px;margin-top: -3px;"/> </a> 
+  <span style="color: blue;">Tbilisi/Batumi</span><br/>
+  <span style="color: maroon;"> <a href="#">Itjobs corp </a> </span>
+  </div> 
+  </li>
+
+
+
+
+</ul>
+
+
+
+
+
+<% } %>
+
+
+
 
 
 </div>
