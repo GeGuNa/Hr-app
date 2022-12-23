@@ -5,6 +5,7 @@ const escapeHTML = require('escape-html')
 const job1253 = require('./jobs')
 const job125333 = require('./job')
 const text1254 = require('./text')
+const seek_2142 = require('./seek')
 const app = express()
 
 const prt = 2000
@@ -116,6 +117,7 @@ next()
 app.use('/jobs', job1253)
 app.use('/messages', text1254)
 app.use('/job', job125333)
+app.use('/seek', seek_2142)
 
 
 

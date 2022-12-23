@@ -30,6 +30,19 @@ return mS[qwe.getMonth()]
 }
 
 
+function Date_dmy(w22){
+	
+let qwe = new Date(w22);
+
+let d = qwe.getDate()
+let y = qwe.getFullYear()
+let m = qwe.getMonth()
+var mS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+	 
+return `${d} ${mS[m]} ${y}`;	 
+}
+
+
 
 /*
 function is_Empty(str, max, min = 0) {
