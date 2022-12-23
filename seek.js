@@ -6,7 +6,7 @@ const { Unix_timestamp, Is_number, knex, t_mail, is_Empty } = require('./funcs.j
 app.get("/", async(req, res) => {
 
 let psrq = {
-	title:'Job details', 
+	title:'Searching details', 
 	user: tdatausr, 
 }
 
