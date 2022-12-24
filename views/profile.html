@@ -2,74 +2,98 @@
 
 
 
-<div class="row">
+<div class="row" style="justify-content:center;">
 
 <div class="col-10">
 
 
 
-<div class="row" style="margin-top:14px;">
-
-<div class="col-2" style="background-color: white;padding:15px;">
-
-<div class="pcntr">
-<img src="/icons/Default.jpg"/>
-</div>
-
-<div class="pcntr Accnt">
-<%=user.name%> [ID: <%=user.uid%>]
-</div>
-
-<div class="qqzntr22" ="">
-<span style="padding: 5px;">
-  <a style="color: #282525;" href="/jobs/my" class=""> My jobs</a> | <a style="color: #282525;" href="/jobs/add" class=""> New</a>
-  </span>
-  <a href="/my_company" class="">My companies</a>
-  
-  <% if (dataFetch.uid !== user.uid) { %>
-  <a href="/messages/<%=user.uid%>" class="">Send a message</a>
-   <% } else { %>
-	  <a href="/messages" class="">Messages</a> 
-   <% } %>  
-  <a href="/parlor" class="">Settings</a>
-  <a href="#" class="">Exit</a>
-</div>
-
-
-</div>
-
-<div class="col-10">
-
-<h5 class="card-title" style="background-color: white;padding:10px 0 10px 0;text-align:center">New post</h5>
-
-<div class="commentBox">
 
 
 
-
-<form style="background:#fff;padding:10px">
-
-    <textarea class="form-control" style="resize:none;height:80px;" placeholder="What's on your mind"></textarea>
-    <button class="commentPost w-100" style="padding:10px;">Post</button>
-  
-  
-
-</form>
+<div class="row">
+	
+	
+<div class="col-12 nopadl">
 
 
-
+<div class="list-group w-auto" style="margin-top:25px;">
+	
+<div href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+    <img src="/pics/image_12521.jpg" alt="twbs" width="120" class="rounded-circle flex-shrink-0">
+    <div class="d-flex gap-2 w-100 justify-content-between">
+      <div>
+        <span class="mb-0" style="color: black;font-weight: 600;font-size: 26px;"><%=user.name%> <%=user.surn%></span>
+        
+        
+        <div>
+			<span style="color:green;word-break:break-all;">qwecqwecqwecqwecqwecqwecqwecqwe</span> 
+			</div>
+        
+        <p class="mb-0 opacity-75">Last visit: 10 min ago</p>
+        
+        
+        
+      
+			
+      </div>
+      
+      
+      
+      <small class="text-nowrap"><button type="button" class="btn_msg" style="">Message</button></small>
+    </div>
+  </div>
 
 </div>
-</div>
 
-</div>
 
 
 <div class="row">
 
-<h5 class="card-title" style="background-color: white;padding:10px 0 10px 0 ;margin-top:15px;text-align:center">Announcements by <%=user.name%></h5>
+<div class="col-4">
+<button style="width: 100%;padding:10px;margin-top:10px;border:0;"><img style="width:20px;" src="/icons/icons8-notes.svg"> <span>Posts</span> <span style="color:blue;">(0)</span></button>
+</div>
 
-<div class="col-12">
+<div class="col-4">
+<button style="width: 100%;padding:10px;margin-top:10px;border:0;"><img style="width:20px;" src="/icons/icons8-users-48.png"> Followers <span style="color:blue;">(0)</span></button>
+</div>
+
+<div class="col-4">
+<button style="width: 100%;padding:10px;margin-top:10px;border:0;"><img style="width:15px;" src="/icons/icons8-friend-58.png"> Friends <span style="color:blue;">(0)</span></button>
+</div>
+
+</div>
+
+
+
+</div>
+
+
+	
+	
+
+<div class="col-12 nopadl">
+	
+<div class="card-title" style="background-color: white;padding:10px 0 10px 0 ;margin-top:15px;text-align:center">Announcements by <%=user.name%></div>
+
+</div>
+
+<div class="col-3" style="background:#fff;margin-top:20px;margin-bottom:20px;padding-left: 30px;padding-top:10px;" id="lnkprfl_2">
+<h5>Links</h5>
+
+<div><img src="/icons/icons8-facebook.svg" width="25"/> <a href="#">https://fb.com/?profile.php?id=1</a></div>
+<div><img src="/icons/icons8-instagram.svg" width="25"/> <a href="#">https://instagram.com/tt215123</a></div>
+<div><img src="/icons/icons8-skype.svg" width="25"/> <a href="#">https://skype.com</a></div>
+<div><img src="/icons/icons8-steam-circled.svg" width="25"/> <a href="#">https://steam.com/blabla</a></div>
+
+
+
+
+
+</div>
+
+
+<div class="col-9">
 
 <div class="list-group w-auto" style="margin-top:20px;margin-bottom:20px;" id="lsts2"> 
 
@@ -152,10 +176,12 @@
   
 </div>
 
+
+
+
 </div>
 
 
-<%-include("right.html") %>
 
 
 </div>

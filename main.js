@@ -532,19 +532,25 @@ qz221a = await knex('user').where("uid",rquid).select('*').first()
 if (!qz221a) {
 res.write(`Profile doesn't exists`)
 } else {
-res.render('profile2.html', {title:'profile', user: qz221a, dataFetch: tdatausr})
+res.render('profile.html', {title:'profile', user: qz221a, dataFetch: tdatausr})
 }
 
 }
 
 
+res.end()
+})
 
 
-//console.log(qz221a)
+app.get('/my', async(req,res)=>{
 
-/*
+const rquid = tdatausr.uid
 
-*/
+
+let qz221a = await knex('user').where("uid",rquid).select('*').first()
+
+
+res.render('my.html', {title:'profile', user: qz221a, dataFetch: tdatausr})
 
 
 
