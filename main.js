@@ -532,7 +532,7 @@ qz221a = await knex('user').where("uid",rquid).select('*').first()
 if (!qz221a) {
 res.write(`Profile doesn't exists`)
 } else {
-res.render('profile.html', {title:'profile', user: qz221a, dataFetch: tdatausr})
+res.render('profile2.html', {title:'profile', user: qz221a, dataFetch: tdatausr})
 }
 
 }
