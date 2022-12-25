@@ -137,27 +137,21 @@ const qexpt = req.body.exp_time
 const jtype = req.body.typej
 const etype = req.body.etype
 const qdesc = req.body.descr
+const qwplc = req.body.working_place
 
 //let qrwwarr = [qtitle,qdesc];
 
-console.log(qtitle.length)
+//console.log(qtitle.length)
 
 
-if (!is_Empty(qtitle,128)){ 
-	return res.status(200).send('uups3')
-}
-else if (!is_Empty(qexp,30)){  return res.status(200).send('uups4') }
-	
-else if (!is_Empty(qexpt,30)){ return res.status(200).send('uups5') }
-	 
+if (!is_Empty(qtitle,128)){ return res.status(200).send('uups3') }
+else if (!is_Empty(qexp,30)){  return res.status(200).send('uups4') }	
+else if (!is_Empty(qexpt,30)){ return res.status(200).send('uups5') } 
 else if (!is_Empty(jtype,30)){   return res.status(200).send('uups6') }
-	
 else if (!is_Empty(etype,50)){  return res.status(200).send('uups7') } 
-	
 else if (!is_Empty(qdesc,5000)){  return res.status(200).send('uups8') }
-else { 
-	// 
-}
+else if (!is_Empty(qwplc,128)){  return res.status(200).send('uups9') }
+else {  }
 	
 
 
@@ -198,9 +192,9 @@ if (qexpt == 1) {
 | work_type       | text       | YES  |     | ''      |                |
 | empl_type       | text       | YES  |     | ''      |                |
 | experience_time | text       | YES  |     | ''      |                |
+| place           | text       | YES  |     | ''      |                |
 +-----------------+------------+------+-----+---------+----------------+
-13 rows in set (0.001 sec)
-
+14 rows in set (0.001 sec)
 
 
 */
@@ -214,7 +208,9 @@ await knex('job').insert({
 	experience_time: qexp,
 	empl_type: etype,
 	work_type: jtype,
-	expire_time: tmqwe21213
+	expire_time: tmqwe21213,
+	place: qwplc,
+	time: new Date().getTime()
 });
 
 
