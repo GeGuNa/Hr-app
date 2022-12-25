@@ -567,6 +567,55 @@ res.end()
 })
 
 
+
+
+
+/**********  company ***********/
+
+
+
+app.get('/company/:id', async(req,res) => {
+
+let qz221a 
+
+const rquid = Math.abs(parseInt(req.params.id)) 
+
+if (isNaN(rquid) === true || rquid == 0) {
+res.write(`uupsi`)
+} else {
+
+qz221a = await knex('company').where("cid",rquid).select('*').first()
+
+if (!qz221a) {
+res.write(`Profile doesn't exists`)
+} else {
+	
+	
+let CuserF = await knex('user').where("uid",qz221a.user).select('*').first()
+	
+	
+		
+	
+res.render('company.html', {
+	title:'Company details', 
+	user: tdatausr,
+	dataC: qz221a,
+	author:CuserF
+})
+
+}
+
+}
+
+
+res.end()
+})
+
+
+
+/********** end of company  ************/
+
+
 app.get('/my', async(req,res)=>{
 
 const rquid = tdatausr.uid
