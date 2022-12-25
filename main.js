@@ -545,7 +545,7 @@ if (!qz221a) {
 res.write(`Profile doesn't exists`)
 } else {
 	
-let jbllst = await knex('job').where("user",rquid).select('*').limit(10)
+let jbllst = await knex('job').where("user",rquid).select('*').limit(20).orderBy('jid','desc')
 	
 	
 	
