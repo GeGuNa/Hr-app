@@ -30,6 +30,25 @@ return mS[qwe.getMonth()]
 }
 
 
+
+
+
+//soon i'll organize this function properly 
+function ctlm1zz2qwe(tm) {
+	
+let qwe = new Date(tm);
+
+let date = qwe.getDate()
+let year = qwe.getFullYear()
+let month = qwe.getMonth()
+let hour = qwe.getHours()
+let min = qwe.getMinutes()
+let sec = qwe.getSeconds()
+let day = qwe.getDate()
+
+return `${hour}/${min}/${day}/${sec}`;
+}
+
 function Date_dmy(w22){
 	
 let qwe = new Date(w22);
@@ -198,4 +217,4 @@ if (Tpimage.test(name)) {
 
 
 
-module.exports = { Unix_timestamp, Is_number, knex, ifImage, t_mail, is_Empty }
+module.exports = { Unix_timestamp, Is_number, knex, ifImage, t_mail, is_Empty, ctlm1zz2qwe }

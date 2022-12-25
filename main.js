@@ -15,7 +15,7 @@ var mime = require('mime-types')
 
 
 var session = require('express-session')
-const { Unix_timestamp, Is_number, knex, ifImage, t_mail } = require('./funcs.js')
+const { Unix_timestamp, Is_number, knex, ifImage, t_mail, ctlm1zz2qwe } = require('./funcs.js')
 
 app.set('trust proxy', 1) 
 
@@ -77,6 +77,18 @@ tdatausr = await knex('user').where({
   mail: qusrs,
   password:  qusrp
 }).select('*').first();
+
+
+
+if (tdatausr){
+
+await knex('user')
+.where({uid: tdatausr.uid})
+.update({
+last_visit: new Date().getTime()
+});
+
+}
 
 }
 
@@ -532,7 +544,20 @@ qz221a = await knex('user').where("uid",rquid).select('*').first()
 if (!qz221a) {
 res.write(`Profile doesn't exists`)
 } else {
-res.render('profile.html', {title:'profile', user: qz221a, dataFetch: tdatausr})
+	
+let jbllst = await knex('job').where("user",rquid).select('*').limit(10)
+	
+	
+	
+	
+res.render('profile.html', {
+	title:'profile', 
+	user: qz221a, 
+	dataFetch: tdatausr, 
+	dataJ: jbllst, 
+	prlstvs: ctlm1zz2qwe(qz221a.last_visit)
+})
+
 }
 
 }

@@ -2,6 +2,7 @@
 
 
 
+
 <div class="row" style="justify-content:center;">
 
 <div class="col-10">
@@ -30,7 +31,7 @@
 			<span style="color:green;word-break:break-all;">qwecqwecqwecqwecqwecqwecqwecqwe</span> 
 			</div>
         
-        <p class="mb-0 opacity-75">Last visit: 10 min ago</p>
+        <p class="mb-0 opacity-75">Last visit: <%=prlstvs%> </p>
         
         
         
@@ -97,75 +98,39 @@
 
 <div class="list-group w-auto" style="margin-top:20px;margin-bottom:20px;" id="lsts2"> 
 
+
+<%
+
+dataJ.map(function(val,index){ 
+
+
+let qwe = new Date(val.time);
+
+let d = qwe.getDate()
+let y = qwe.getFullYear()
+let m = qwe.getMonth()
+var mS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+
+
+%>
+
   <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-    <img src="/icons/2918581.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+    <img src="/get_pic/<%=val.cid %>" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
     <div class="d-flex gap-2 w-100 justify-content-between">
       <div>
-        <h6 class="mb-0">List group item heading</h6>
-        <p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
+        <h6 class="mb-0" style="color:black;"><%=val.name%></h6>
+        <p class="mb-0" style="word-break:break-all;"><%=val.desc%></p>
       </div>
-      <small class="opacity-50 text-nowrap">now</small>
+      <small class="text-nowrap"><%=d %>/<%=mS[m] %>/<%=y %></small>
     </div>
   </a>
+
   
-  <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-    <img src="/icons/2918581.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
-    <div class="d-flex gap-2 w-100 justify-content-between">
-      <div>
-        <h6 class="mb-0">List group item heading</h6>
-        <p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
-      </div>
-      <small class="opacity-50 text-nowrap">now</small>
-    </div>
-  </a>
-  
-  
-    <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-    <img src="/icons/2918581.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
-    <div class="d-flex gap-2 w-100 justify-content-between">
-      <div>
-        <h6 class="mb-0">List group item heading</h6>
-        <p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
-      </div>
-      <small class="opacity-50 text-nowrap">now</small>
-    </div>
-  </a>
-  
-  
-    <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-    <img src="/icons/2918581.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
-    <div class="d-flex gap-2 w-100 justify-content-between">
-      <div>
-        <h6 class="mb-0">List group item heading</h6>
-        <p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
-      </div>
-      <small class="opacity-50 text-nowrap">now</small>
-    </div>
-  </a>
-  
-    <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-    <img src="/icons/2918581.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
-    <div class="d-flex gap-2 w-100 justify-content-between">
-      <div>
-        <h6 class="mb-0">List group item heading</h6>
-        <p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
-      </div>
-      <small class="opacity-50 text-nowrap">now</small>
-    </div>
-  </a>
-  
-    <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-    <img src="/icons/2918581.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
-    <div class="d-flex gap-2 w-100 justify-content-between">
-      <div>
-        <h6 class="mb-0">List group item heading</h6>
-        <p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
-      </div>
-      <small class="opacity-50 text-nowrap">now</small>
-    </div>
-  </a>  
-  
-  
+ <%
+
+})
+
+%> 
   
   </div>
    
@@ -185,6 +150,8 @@
 
 
 </div>
+
+
 
 
 
