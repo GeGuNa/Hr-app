@@ -18,6 +18,24 @@ width: 100% !important;
 
 }
 
+
+
+.cflex {
+display:flex !important;
+padding-bottom:10px;
+line-height: 18px;
+}
+
+.cflex > div > img {
+border-radius:20%;
+width:40px;
+height:40px;
+}
+
+.cflex2 {
+flex-direction: column;
+}
+
 a { 
 color: #0a66c2 !important;
 }
