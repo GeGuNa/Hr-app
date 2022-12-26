@@ -37,9 +37,10 @@ return `${d} ${mS[m]} ${y}`;
 
 <div class="col-12">
 
-<div class="list-group w-auto" style="margin-top:20px;margin-bottom:20px;" id="lsts2"> 
+<div class="list-group w-auto" style="" id="lsts2"> 
 
-  <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+
+  <div  style="margin-bottom:20px;margin-top:20px;" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
     <img src="/icons/2918581.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
     <div class="d-flex gap-2 w-100 justify-content-between">
       <div>
@@ -48,31 +49,19 @@ return `${d} ${mS[m]} ${y}`;
       </div>
       
     </div>
-  </a>
+  </div>
+  
+  
 
 <div style="background-color: white;padding:10px;">
 	
 	
 
 
-<span class="mb-0" style="word-break:break-all;color:blue;font-size:1.2rem;display:block;"><%=dataC.description%></span>
-
-	
-
-<br>
-	<b>Country:</b> <%=dataC.country%>
-<br>
-	<b>Owner:</b> <a href="/profile/<%=author.uid%>"/><%=author.name%> <%=author.surn%></a>
-
-
-
-
-
-
-<p></p><p>
-
-<b>Company link:</b>
-<span class="mb-0" style="word-break:break-all;"><a href="#">Cmpny.com</a></span>
+<span style="word-break:break-all;color:blue;font-size:1.2rem;display:block;"><%=dataC.description%></span><br>
+<span><b>Address:</b> <%=dataC.country%><br></span>
+<span><b>Owner:</b> <a href="/profile/<%=author.uid%>"/><%=author.name%> <%=author.surn%></a><br></span>
+<span><b>Company link:</b> <span class="mb-0" style="word-break:break-all;"><a href="#">http://Cmpny.com</a></span></span>
 
 
 

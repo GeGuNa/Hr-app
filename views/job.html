@@ -15,7 +15,7 @@ let y = qwe.getFullYear()
 let m = qwe.getMonth()
 var mS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 	 
-return `${d} ${mS[m]} ${y}`;	 
+return `${d} ${mS[m]}`;	 
 }
 
 
@@ -35,9 +35,10 @@ return `${d} ${mS[m]} ${y}`;
 
 <div class="p42w2141">
 	
-	<div class="pleft">
-<img src="/get_pic/<%=jdata.cid %>" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0"> 	<a style="color:blue;" href="/company/<%=cdata.cid%>"><%=cdata.name%></a>
+<div class="pleft">
+<span style="font-size:17px;"><%=jdata.name%></span>
 </div>
+
 	
 <div class="pright">
 	[Job ID: <span style="color:blue;"><%=jdata.jid%></span>]
@@ -50,7 +51,7 @@ return `${d} ${mS[m]} ${y}`;
 
 <div class="list-group w-auto" style="margin-top:20px;margin-bottom:20px;" id="lsts2"> 
 
-  <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+  <a href="/profile/<%=usrdata.uid%>" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
     <img src="/icons/2918581.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
     <div class="d-flex gap-2 w-100 justify-content-between">
       <div>
@@ -65,33 +66,23 @@ return `${d} ${mS[m]} ${y}`;
 
 <div style="background-color: white;padding:10px;">
 	
-	
-
-
-<span class="mb-0" style="margin-bottom:10px!important;word-break:break-all;color:blue;font-size:1.2rem;display:block;"><%=jdata.name%></span>
-
-	
-	<b>Description:</b>
-<p class="mb-0" style="word-break:break-all;"><%=jdata.desc%></p>
-
-<br/>
-	<b>When:</b> <%=tmqw123123e(jdata.time);%>/<%=tmqw123123e(jdata.expire_time);%>
+	<b>Published:</b> <%=tmqw123123e(jdata.time);%> / <b>Deadline</b>: <%=tmqw123123e(jdata.expire_time);%>
 <br/>
 	<b>Experience:</b> <%=jdata.experience_time%>
 <br/>
 	<b>Working place:</b> <%=jdata.place%>
+<br/>
+	<b>Working mode:</b> <%=jdata.work_type%>
+<br/>
+	<b>Employment type:</b> <%=jdata.empl_type%>
 
-
+<span><br><b>Provided by:</b> 	<a style="color:blue;" href="/company/<%=cdata.cid%>"><%=cdata.name%></a></span>
 
 
 
 <p><p/>
 
-<b>Company link:</b>
-<span class="mb-0" style="word-break:break-all;"><a href="#">Cmpny.com</a></span>
-
-
-
+<p class="mb-0" style="word-break:break-all;"><%=jdata.desc%> </p>
 
 
 
