@@ -104,7 +104,7 @@ CREATE TABLE `job` (
   KEY `cid` (`cid`),
   CONSTRAINT `job_ibfk_1` FOREIGN KEY (`user`) REFERENCES `user` (`uid`),
   CONSTRAINT `job_ibfk_2` FOREIGN KEY (`cid`) REFERENCES `company` (`cid`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -113,7 +113,7 @@ CREATE TABLE `job` (
 
 LOCK TABLES `job` WRITE;
 /*!40000 ALTER TABLE `job` DISABLE KEYS */;
-INSERT INTO `job` VALUES (1,9,22,1671751901309,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq','','','10-15 years',''),(2,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','','',''),(3,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','','',''),(4,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','','',''),(5,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','','',''),(6,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','','',''),(7,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','','',''),(8,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','','',''),(9,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','','',''),(10,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','','',''),(11,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','','',''),(12,1,22,NULL,1,'ახახქწექწეეეეეე',NULL,NULL,NULL,'eeeeeeeeeeeeeeeeeeeeeeee','2','1','15 weli',''),(13,1,24,NULL,1673223670844,'ახალი სამსახური',NULL,NULL,NULL,'wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww','Onsite','contract','10 წელი',''),(14,1,24,NULL,1671409362819,'ახალი სამსახური',NULL,NULL,NULL,'wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww','Onsite','contract','10 წელი',''),(15,1,23,NULL,1673830516218,'wwwwwwwww',NULL,NULL,NULL,'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee','Onsite','contract','10 წელიe',''),(16,1,24,NULL,1673300525286,'ახალიუიი',NULL,NULL,NULL,'ეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეე','Onsite','part','10 წელიe',''),(17,1,25,NULL,1674999999736,'ახალი ',NULL,NULL,NULL,'წწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწ','Remote','contract','10 წელი',''),(18,1,24,NULL,1672592881236,'with working place',NULL,NULL,NULL,'just testing ........\r\nblabla\r\n<b>qweqwe</b>','Remote','full','20 years','batumi');
+INSERT INTO `job` VALUES (1,9,22,1671751901309,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq','','','10-15 years',''),(2,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','','',''),(3,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','','',''),(4,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','','',''),(5,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','','',''),(6,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','','',''),(7,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','','',''),(8,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','','',''),(9,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','','',''),(10,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','','',''),(11,1,22,NULL,NULL,'From  zzVidea','asds@gmail.com','995555445522','buhahahah','qweqweqweqweqweqweqweqweqweqweqweqwe','','','',''),(12,1,22,NULL,1,'ახახქწექწეეეეეე',NULL,NULL,NULL,'eeeeeeeeeeeeeeeeeeeeeeee','2','1','15 weli',''),(13,1,24,NULL,1673223670844,'ახალი სამსახური',NULL,NULL,NULL,'wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww','Onsite','contract','10 წელი',''),(14,1,24,NULL,1671409362819,'ახალი სამსახური',NULL,NULL,NULL,'wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww','Onsite','contract','10 წელი',''),(15,1,23,NULL,1673830516218,'wwwwwwwww',NULL,NULL,NULL,'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee','Onsite','contract','10 წელიe',''),(16,1,24,NULL,1673300525286,'ახალიუიი',NULL,NULL,NULL,'ეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეეე','Onsite','part','10 წელიe',''),(17,1,25,NULL,1674999999736,'ახალი ',NULL,NULL,NULL,'წწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწწ','Remote','contract','10 წელი',''),(18,1,24,NULL,1672592881236,'with working place',NULL,NULL,NULL,'just testing ........\r\nblabla\r\n<b>qweqwe</b>','Remote','full','20 years','batumi'),(19,1,24,NULL,1673198107650,'eeeeeee',NULL,NULL,NULL,'wwwwwwwwwwww','Hybrid','part','10 წელი','wwwwwwwwww'),(20,1,22,1671988590805,1673198190805,'c123c123c123',NULL,NULL,NULL,'wwwwwww','Onsite','full','15 weli','qqqqqqqq');
 /*!40000 ALTER TABLE `job` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -218,8 +218,39 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'nukri','brdze',NULL,NULL,NULL,NULL,'asda@mail.ru',NULL,NULL,'+995568223344','female','seeker',0,1671988289524,0,'123456'),(4,'nukri','brdze',NULL,NULL,NULL,NULL,'asda@mail.r2u',NULL,NULL,'+995568223344','male','seeker',0,0,0,'0'),(8,'nukri','brdze',NULL,NULL,NULL,NULL,'asda@mail.r2u2',NULL,NULL,NULL,'male','seeker',0,0,0,'0'),(9,'dolly','jonson',NULL,NULL,NULL,NULL,'abracadabra@gmail.com',NULL,NULL,NULL,'female','seeker',0,0,0,'0');
+INSERT INTO `user` VALUES (1,'nukri','brdze',NULL,NULL,NULL,NULL,'asda@mail.ru',NULL,NULL,'+995568223344','female','seeker',0,1672169270747,0,'123456'),(4,'nukri','brdze',NULL,NULL,NULL,NULL,'asda@mail.r2u',NULL,NULL,'+995568223344','male','seeker',0,0,0,'0'),(8,'nukri','brdze',NULL,NULL,NULL,NULL,'asda@mail.r2u2',NULL,NULL,NULL,'male','seeker',0,0,0,'0'),(9,'dolly','jonson',NULL,NULL,NULL,NULL,'abracadabra@gmail.com',NULL,NULL,NULL,'female','seeker',0,0,0,'0');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user_posts`
+--
+
+DROP TABLE IF EXISTS `user_posts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_posts` (
+  `pid` bigint(32) NOT NULL AUTO_INCREMENT,
+  `when_posted` bigint(32) DEFAULT NULL,
+  `title` text DEFAULT NULL,
+  `message` text DEFAULT NULL,
+  `author` bigint(32) DEFAULT NULL,
+  `post_type` text DEFAULT '',
+  `post_status` text DEFAULT '',
+  PRIMARY KEY (`pid`),
+  KEY `author` (`author`),
+  CONSTRAINT `user_posts_ibfk_1` FOREIGN KEY (`author`) REFERENCES `user` (`uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_posts`
+--
+
+LOCK TABLES `user_posts` WRITE;
+/*!40000 ALTER TABLE `user_posts` DISABLE KEYS */;
+INSERT INTO `user_posts` VALUES (2,NULL,'qweqweqwe','qweqweqwe',1,'',''),(3,NULL,'qweqweqwe','qweqweqwe',1,'',''),(4,NULL,'qweqweqwe','qweqweqwe',1,'','');
+/*!40000 ALTER TABLE `user_posts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -231,4 +262,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-25 21:12:53
+-- Dump completed on 2022-12-27 23:53:38
