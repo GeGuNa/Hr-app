@@ -63,8 +63,23 @@ return `${d} ${mS[m]}`;
       <% } %>
     </div>
   </a>
+  
+  
+ 	
+<% if (usrdata.uid != user.uid) { %>
+
+<div class="ccflex ccflex2" style="margin-bottom: 20px;background: #fff;padding-bottom: 10px;">
+<div><button id="texting" class="commentPost w-100" style="padding:10px;">Send a message</button></div>
+<div><button id="Cvsnd" class="commentPost w-100" style="padding:10px;">Send a cv</button></div>
+</div>
+  
+<% } %>  
+  
+  
 
 <div style="background-color: white;padding:10px;">
+	
+	
 	
 	<b>Published:</b> <%=tmqw123123e(jdata.time);%> / <b>Deadline</b>: <%=tmqw123123e(jdata.expire_time);%>
 <br/>
@@ -88,13 +103,6 @@ return `${d} ${mS[m]}`;
 
  </div>
   
-  
-   <% if (usrdata.uid != user.uid) { %>
-<div class="commentBox">
-<button id="texting" class="commentPost w-100" style="padding:10px;">Send a message</button>
-</div>
-  
- <% } %> 
   
   </div>
    
@@ -125,6 +133,29 @@ $("#cntt").click(function() {
 });
 
 </script>
+
+<style>
+
+
+.ccflex {
+	display:inline-flex;
+	width:100%;
+}
+
+
+.ccflex2 {
+	flex-direction:row;
+}
+
+.ccflex2 > div {
+	flex-basis:50%;
+}
+
+.ccflex2 > div {
+    margin: 0px 4px 0px 4px;
+}
+
+</style>
 
 
 
