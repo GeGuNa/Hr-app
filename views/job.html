@@ -49,7 +49,7 @@ return `${d} ${mS[m]}`;
 
 <div class="col-12">
 
-<div class="list-group w-auto" style="margin-top:20px;margin-bottom:20px;" id="lsts2"> 
+<div class="list-group w-auto" style="margin-top:20px;margin-bottom:10px;" id="lsts2"> 
 
   <a href="/profile/<%=usrdata.uid%>" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
     <img src="/icons/2918581.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
@@ -65,16 +65,7 @@ return `${d} ${mS[m]}`;
   </a>
   
   
- 	
-<% if (usrdata.uid != user.uid) { %>
 
-<div class="ccflex ccflex2" style="margin-bottom: 20px;background: #fff;padding-bottom: 10px;">
-<div><button id="texting" class="commentPost w-100" style="padding:10px;">Send a message</button></div>
-<div><button id="Cvsnd" class="commentPost w-100" style="padding:10px;">Send a cv</button></div>
-</div>
-  
-<% } %>  
-  
   
 
 <div style="background-color: white;padding:10px;">
@@ -109,6 +100,20 @@ return `${d} ${mS[m]}`;
   </div>
  
  
+<% if (usrdata.uid != user.uid) { %>
+<div class="col-12">
+
+<div class="ccflex ccflex2" style="background: #fff;">
+<div><button id="texting" class="commentPost w-100" style="padding:8px;">Send a message</button></div>
+<div><button id="Cvsnd" class="commentPost w-100" style="padding:8px;">Send a cv</button></div>
+</div>
+
+</div>
+
+  
+<% } %>  
+  
+ 
  
   
 </div>
@@ -138,7 +143,7 @@ $("#cntt").click(function() {
 
 
 .ccflex {
-	display:inline-flex;
+	display:flex;
 	width:100%;
 }
 
@@ -152,7 +157,7 @@ $("#cntt").click(function() {
 }
 
 .ccflex2 > div {
-    margin: 0px 4px 0px 4px;
+    margin: 0px 4px 7px 4px;
 }
 
 </style>
