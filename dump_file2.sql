@@ -16,6 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `category`
+--
+
+DROP TABLE IF EXISTS `category`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `category` (
+  `cid` bigint(32) NOT NULL AUTO_INCREMENT,
+  `namd` text DEFAULT NULL,
+  `title` text DEFAULT NULL,
+  `description` bigint(32) DEFAULT NULL,
+  PRIMARY KEY (`cid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `category`
+--
+
+LOCK TABLES `category` WRITE;
+/*!40000 ALTER TABLE `category` DISABLE KEYS */;
+/*!40000 ALTER TABLE `category` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `company`
 --
 
@@ -218,7 +243,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'nukri','brdze',NULL,NULL,NULL,NULL,'asda@mail.ru',NULL,NULL,'+995568223344','female','seeker',0,1672169270747,0,'123456'),(4,'nukri','brdze',NULL,NULL,NULL,NULL,'asda@mail.r2u',NULL,NULL,'+995568223344','male','seeker',0,0,0,'0'),(8,'nukri','brdze',NULL,NULL,NULL,NULL,'asda@mail.r2u2',NULL,NULL,NULL,'male','seeker',0,0,0,'0'),(9,'dolly','jonson',NULL,NULL,NULL,NULL,'abracadabra@gmail.com',NULL,NULL,NULL,'female','seeker',0,0,0,'0');
+INSERT INTO `user` VALUES (1,'nukri','brdze',NULL,NULL,NULL,NULL,'asda@mail.ru',NULL,NULL,'+995568223344','female','seeker',0,1672251010090,0,'123456'),(4,'nukri','brdze',NULL,NULL,NULL,NULL,'asda@mail.r2u',NULL,NULL,'+995568223344','male','seeker',0,0,0,'0'),(8,'nukri','brdze',NULL,NULL,NULL,NULL,'asda@mail.r2u2',NULL,NULL,NULL,'male','seeker',0,0,0,'0'),(9,'dolly','jonson',NULL,NULL,NULL,NULL,'abracadabra@gmail.com',NULL,NULL,NULL,'female','seeker',0,0,0,'0');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -262,4 +287,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-27 23:53:38
+-- Dump completed on 2022-12-28 22:39:47

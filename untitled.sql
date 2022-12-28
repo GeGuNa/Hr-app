@@ -11,3 +11,14 @@ CREATE TABLE `user_posts` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 
+
+
+CREATE TABLE `category` (
+  `cid` bigint(32) NOT NULL AUTO_INCREMENT,
+  `namd` text DEFAULT NULL,
+  `title` text DEFAULT NULL,
+  `description` bigint(32) DEFAULT NULL,
+  PRIMARY KEY (`cid`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
+
+
