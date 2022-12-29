@@ -50,7 +50,7 @@ let jpostuser = await knex('user').where("uid",qz221a.user).select('*').first()
 let cat_idd = await knex('category').where("cid",qz221a.cat_id).select('*').first()
 
 
-console.log(cat_idd)
+//console.log(cat_idd)
 
 
 
