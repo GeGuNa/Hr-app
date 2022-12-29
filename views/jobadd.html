@@ -46,7 +46,7 @@
 
 
 
-<div class="form-holder" style="width:100%;">
+<div class="form-holder">
 <select name="cid" class="form-control">
 <option value="" disabled="" selected="">Choose company</option>
 <% cdata.map((val)=> { %>
@@ -57,6 +57,21 @@
 </select>
 <i class="zmdi zmdi-chevron-down"></i>
 </div>
+
+
+
+<div class="form-holder" style="margin-left:10px;">
+<select name="cat_id" class="form-control">
+<option value="" disabled="" selected="">Choose Category</option>
+		  <%cats.map((val)=> { %>
+			 <option value="<%=val.cid%>"><%=val.namd%></option>
+		  <%}) %>
+
+
+</select>
+<i class="zmdi zmdi-chevron-down"></i>
+</div>
+
 
 
 </div>

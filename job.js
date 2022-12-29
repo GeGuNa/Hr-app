@@ -47,7 +47,10 @@ return res.redirect('/')
 let cmpnid = await knex('company').where("cid",qz221a.cid).select('*').first()
 let jpostuser = await knex('user').where("uid",qz221a.user).select('*').first()
 
+let cat_idd = await knex('category').where("cid",qz221a.cat_id).select('*').first()
 
+
+console.log(cat_idd)
 
 
 
@@ -79,7 +82,8 @@ let psrq = {
 	jdata: qz221a, 
 	cdata: cmpnid, 
 	usrdata: jpostuser, 
-	ptqwe2: req.baseUrl
+	ptqwe2: req.baseUrl,
+	catdsc: cat_idd
 }
 
 

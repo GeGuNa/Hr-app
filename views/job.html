@@ -71,8 +71,7 @@ return `${d} ${mS[m]}`;
 <div style="background-color: white;padding:10px;">
 	
 	
-	
-	<b>Published:</b> <%=tmqw123123e(jdata.time);%> / <b>Deadline</b>: <%=tmqw123123e(jdata.expire_time);%>
+<b>Published:</b> <%=tmqw123123e(jdata.time);%> / <b>Deadline</b>: <%=tmqw123123e(jdata.expire_time);%>
 <br/>
 	<b>Experience:</b> <%=jdata.experience_time%>
 <br/>
@@ -81,6 +80,8 @@ return `${d} ${mS[m]}`;
 	<b>Working mode:</b> <%=jdata.work_type%>
 <br/>
 	<b>Employment type:</b> <%=jdata.empl_type%>
+<br/>
+	<b>Category:</b> <a href="/cat/<%=catdsc.cid%>"><%=catdsc.namd%></a>
 
 <span><br><b>Provided by:</b> 	<a style="color:blue;" href="/company/<%=cdata.cid%>"><%=cdata.name%></a></span>
 

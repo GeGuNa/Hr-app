@@ -91,10 +91,11 @@ qz221a.map((val)=> {
 */
 
 
-let psrq
+let catldata = await knex('category').select('namd','cid')
 
 
-psrq = {title:'New job', user: tdatausr, cdata: qz221a}
+
+let psrq = {title:'New job', user: tdatausr, cdata: qz221a, cats: catldata}
 
 
 res.render("jobadd.html", psrq)
@@ -138,6 +139,9 @@ const jtype = req.body.typej
 const etype = req.body.etype
 const qdesc = req.body.descr
 const qwplc = req.body.working_place
+const catid_1 = parseInt(req.body.cat_id)
+
+
 
 //let qrwwarr = [qtitle,qdesc];
 
@@ -151,6 +155,8 @@ else if (!is_Empty(jtype,30)){   return res.status(200).send('uups6') }
 else if (!is_Empty(etype,50)){  return res.status(200).send('uups7') } 
 else if (!is_Empty(qdesc,5000)){  return res.status(200).send('uups8') }
 else if (!is_Empty(qwplc,128)){  return res.status(200).send('uups9') }
+else if (isNaN(catid_1) === true || catid_1 == 0) { return res.status(200).send('cat id error') }
+
 else {  }
 	
 
@@ -210,7 +216,8 @@ await knex('job').insert({
 	work_type: jtype,
 	expire_time: tmqwe21213,
 	place: qwplc,
-	time: new Date().getTime()
+	time: new Date().getTime(),
+	cat_id: catid_1
 });
 
 

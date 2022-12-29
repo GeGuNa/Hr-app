@@ -22,3 +22,7 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 
+
+
+alter table `job` add `cat_id` bigint(32) DEFAULT NULL;
+alter table `job` add  foreign key (`cat_id`) references `category` (`cid`);
