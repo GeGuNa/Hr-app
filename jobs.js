@@ -132,6 +132,12 @@ if (!qz221a) {
 	return res.status(200).send('uups2')
 }
 
+
+
+
+
+
+
 const qtitle = req.body.title
 const qexp = req.body.exp
 const qexpt = req.body.exp_time
@@ -142,6 +148,13 @@ const qwplc = req.body.working_place
 const catid_1 = parseInt(req.body.cat_id)
 
 
+let ctq21zg3123 = await knex('category').where("cid",catid_1).select('*').first()
+
+
+
+if (!ctq21zg3123) {
+	return res.status(200).send('upsss cat doesnt exists, are you trying to do something ? boy ')
+}
 
 //let qrwwarr = [qtitle,qdesc];
 
@@ -206,7 +219,7 @@ if (qexpt == 1) {
 */
 
 
-await knex('job').insert({
+let kzr2 = await knex('job').insert({
 	user: tdatausr.uid,
 	name: qtitle,
 	cid: rquid,
@@ -218,10 +231,10 @@ await knex('job').insert({
 	place: qwplc,
 	time: new Date().getTime(),
 	cat_id: catid_1
-});
+}).returning('jid');
 
 
-
+return res.redirect(`/job/${kzr2}`)
 
 
 res.end()
