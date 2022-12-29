@@ -370,6 +370,12 @@ let qzdtwq22 = await knex('job').select('*').orderByRaw('`jid` desc limit 6');
 //console.log(cmpnqweq)
 
 
+let catldata = await knex('category').select('namd','cid')
+
+//console.log(catldata[0].namd)
+
+
+
 if (tusert == 1) {
 
 /*
@@ -379,9 +385,9 @@ let qdata = await knex('user').where({
 }).select('*').first();*/
 
 
-psrq = {title:'Main', user: tdatausr, dataFetch: qzdtwq22}
+psrq = {title:'Main', user: tdatausr, dataFetch: qzdtwq22,ctdata: catldata}
 } else {
-psrq = {title:'Main', dataFetch: qzdtwq22}
+psrq = {title:'Main', dataFetch: qzdtwq22,ctdata: catldata}
 }
 
 
@@ -624,7 +630,12 @@ const rquid = tdatausr.uid
 let qz221a = await knex('user').where("uid",rquid).select('*').first()
 
 
-res.render('my.html', {title:'profile', user: qz221a, dataFetch: tdatausr})
+let qzdtwq22_jobs = await knex('job').where('user',tdatausr.uid).select('*').orderByRaw('`jid` desc limit 5');
+
+//console.log(qzdtwq22_jobs)
+
+
+res.render('my.html', {title:'profile', user: qz221a, dataFetch: tdatausr, jdata: qzdtwq22_jobs})
 
 
 
