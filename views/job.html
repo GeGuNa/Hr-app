@@ -58,7 +58,7 @@ return `${d} ${mS[m]}`;
         <h6 class="mb-0"><%=usrdata.name%></h6>
         <small class="opacity-50 text-nowrap" style="color:blue;"><%=tmqw123123e(jdata.time);%></small>
       </div>
-      <% if (usrdata.uid != user.uid) { %>
+      <% if (user && usrdata.uid != user.uid) { %>
       <div><img id="cntt" style="width:30px" src="/icons/text.png"></div>
       <% } %>
     </div>
@@ -101,7 +101,7 @@ return `${d} ${mS[m]}`;
   </div>
  
  
-<% if (usrdata.uid != user.uid) { %>
+<% if (user && usrdata.uid != user.uid) { %>
 <div class="col-12">
 
 <div class="ccflex ccflex2" style="background: #fff;">

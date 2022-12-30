@@ -14,10 +14,11 @@ res.end()
 
 app.get("/:id", async(req, res) => {
 
+/*
 if (tusert == 0) {
 return res.redirect('/')
 }
-
+*/
 
 let qz2211 = req.params.id	
 
@@ -78,7 +79,7 @@ console.log(qz221a)
 
 let psrq = {
 	title:'Job details', 
-	user: tdatausr, 
+	user: tusert ? tdatausr : undefined, 
 	jdata: qz221a, 
 	cdata: cmpnid, 
 	usrdata: jpostuser, 

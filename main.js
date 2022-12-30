@@ -560,8 +560,8 @@ let jbllst = await knex('job').where("user",rquid).select('*').limit(20).orderBy
 	
 res.render('profile.html', {
 	title:'profile', 
-	user: qz221a, 
-	dataFetch: tdatausr, 
+	user: tusert ? tdatausr : undefined, 
+	dataFetch: qz221a, 
 	dataJ: jbllst, 
 	prlstvs: ctlm1zz2qwe(qz221a.last_visit)
 })
@@ -606,7 +606,7 @@ let CuserF = await knex('user').where("uid",qz221a.user).select('*').first()
 	
 res.render('company.html', {
 	title:'Company details', 
-	user: tdatausr,
+	user: tusert ? tdatausr : undefined, 
 	dataC: qz221a,
 	author:CuserF
 })
@@ -720,7 +720,12 @@ let qzdtwq = await knex('user').where("acc_type",'seeker').select('*').orderByRa
 
 
 
-res.render("candidates.html", {title:'Candidates', user: tdatausr, cnt:qz.cnt, dataFetch:qzdtwq})
+res.render("candidates.html", {
+	title:'Candidates', 
+	user: tusert ? tdatausr : undefined, 
+	cnt:qz.cnt, 
+	dataFetch:qzdtwq
+	})
 
 res.end()
 })
@@ -738,7 +743,12 @@ let qzdtwq = await knex('company').select('*').orderByRaw('cid desc limit 100');
 
 
 
-res.render("employers.html", {title:'Employers', user: tdatausr, cnt: qw21qeqwez['count(*)'], dataFetch:qzdtwq})
+res.render("employers.html", {
+	title:'Employers', 
+	user: tusert ? tdatausr : undefined, 
+	cnt: qw21qeqwez['count(*)'], 
+	dataFetch:qzdtwq
+	})
 
 res.end()
 })

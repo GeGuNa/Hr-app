@@ -37,26 +37,14 @@ let cmpnid = await knex('job').where("cat_id", rquid).orderByRaw('jid desc limit
 let cntpds2212 = await knex('job').where("cat_id", rquid).count({count: '*'})
 //console.log(cmpnid)
 
-let psrq
-
-if (tdatausr) {
-
-psrq = {
+let psrq = {
 	title:'Jobs by category', 
-	user: tdatausr, 
+	user: tusert ? tdatausr : undefined, 
 	data2: cmpnid,
 	cnt: cntpds2212
 }
 
-} else {
 
-psrq = {
-	title:'Jobs by category', 
-	data2: cmpnid,
-	cnt: cntpds2212
-}
-	
-}
 
 //console.log(psrq)
 
