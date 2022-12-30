@@ -11,10 +11,17 @@ let psrq
 
 let qzdtwq22 = await knex('job').select('*').orderByRaw('`jid` desc limit 6');
 
+
+let catl213123z = await knex('category').select('cid','namd');
+
+
+//console.log(catl213123z)
+
+
 if (tusert == 1) {
-psrq = {title:'Jobs', user: tdatausr, dataFetch: qzdtwq22}
+psrq = {title:'Jobs', user: tdatausr, dataFetch: qzdtwq22, ciddt: catl213123z}
 } else {
-psrq = {title:'Jobs', dataFetch: qzdtwq22}
+psrq = {title:'Jobs', dataFetch: qzdtwq22, ciddt: catl213123z}
 }
 
 

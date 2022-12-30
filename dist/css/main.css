@@ -18,6 +18,35 @@ width: 100% !important;
 
 }
 
+#clink {
+//padding:15px;
+}
+
+
+.clistd > div:not(.clistd2) {
+padding:10px;
+background:#fff;
+}
+
+.clistd > div:nth-child(even):not(.clistd2) {
+  background: #fff;
+
+}
+
+.clistd > div:nth-child(odd):not(.clistd2) {
+  background: #e4e7e5;
+}
+
+
+.clistd2 {
+font-size:25px;
+font-weight:500;
+display:block;
+background: #e4e7e5;
+padding:10px;
+color: #000;
+border-bottom:1px solid #e0aeae;
+}
 
 
 .cflex {

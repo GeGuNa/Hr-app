@@ -5,6 +5,34 @@
 <div class="row">
 
 <div class="col-10">
+	
+
+<div class="row">
+
+<div class="col-2">
+
+<div style="margin-top:20px;margin-bottom:20px;">
+
+<div class="clistd">
+
+<div class="clistd2">Categories</div>
+
+<%ciddt.map((val)=>{ %>
+<div>
+<a id="clink" href="/cat/<%=val.cid%>"><span><%=val.namd%></span></a>
+</div>
+<% }) %>
+
+</div>
+
+
+</div>
+</div>
+
+
+
+<div class="col-10">
+
 
 <h5 class="card-title" style="       background-color: white;padding:10px 0 10px 0 ;margin-top:15px;text-align:center">Job list</h5>
 
@@ -41,6 +69,12 @@ var mS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct
 
 <% }) %>
 
+</div>
+
+
+</div>	
+	
+	
 
 </div>
 
