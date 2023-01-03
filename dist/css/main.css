@@ -551,3 +551,21 @@ select.form-control:focus {
 
 *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 body{font-family:montserrat-medium;font-size:15px;color:#666;margin:0}
+
+
+
+.cbtn2 {
+width: 100%;
+background:#f6efef;
+}
+
+#c2_22 > div {
+padding-bottom:10px;
+}
+
+
+::placeholder { 
+color:#000;
+
+font-size:15px;
+}

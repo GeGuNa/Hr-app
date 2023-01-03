@@ -13,9 +13,38 @@
 
 <div style="    margin-left: 10px;">
 
-<input class="form-control" style="background:#fff;border-radius:0;margin-left:2px;" placeholder="By name">
-<input class="form-control" style="background:#fff;border-radius:0;margin-left:2px;" placeholder="By name">
-<input class="form-control" style="background:#fff;border-radius:0;margin-left:2px;" placeholder="By name">
+<form style="padding:10px;" id="c2_22">
+
+<div><input type="text" class="cbtn2" style="border:0;padding: 11px 15px;" placeholder="Searching by name"/></div>
+<div><input type="text" class="cbtn2" style="border:0;padding: 11px 15px;" placeholder="Searching by city"/></div>
+<div>
+
+<div class="">
+	
+<select style="border:0;padding: 12px 15px;width: 100%;">
+		  <option disabled="" selected="">By Category</option>
+		  
+		  
+		   
+		  <%ctdata.map((val)=> { %>
+			 <option value="<%=val.cid%>"><%=val.namd%></option>
+		  <%}) %>
+		  
+			
+		  
+		  
+	  </select>
+	
+
+</div>
+
+
+
+</form>
+
+
+
+</div>
 
 <button type="button" class="" style="width:95%;color:#fff;background:#ff6500;border:0;padding:10px;margin: auto;display: block;">Seek</button>
 </div>

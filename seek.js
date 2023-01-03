@@ -4,10 +4,16 @@ const { Unix_timestamp, Is_number, knex, t_mail, is_Empty } = require('./funcs.j
 
 
 app.get("/", async(req, res) => {
+	
+	
+	let catldata = await knex('category').select('namd','cid')
+
+	
 
 let psrq = {
 	title:'Searching details', 
 	user: tdatausr, 
+	ctdata: catldata
 }
 
 
