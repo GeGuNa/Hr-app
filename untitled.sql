@@ -26,3 +26,30 @@ CREATE TABLE `category` (
 
 alter table `job` add `cat_id` bigint(32) DEFAULT NULL;
 alter table `job` add  foreign key (`cat_id`) references `category` (`cid`);
+
+
+
+CREATE TABLE `friends` (
+  `fid` bigint(32) NOT NULL AUTO_INCREMENT,
+  `when` bigint(32) DEFAULT NULL,
+  `text` text DEFAULT NULL,
+  `user` bigint(32) DEFAULT NULL,
+  `who` bigint(32) DEFAULT NULL,
+  `post_status` text default '',
+  PRIMARY KEY (`fid`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
+
+
+alter table `friends` add `cat_id` bigint(32) DEFAULT NULL;
+
+
+alter table `friends` add  foreign key (`user`) references `user` (`uid`);
+alter table `friends` add  foreign key (`who`) references `user` (`uid`);
+
+
+
+insert into friends (`user`,`who`) values(1,9);
+insert into friends (`user`,`who`) values(1,10);
+
+
+insert into user (`name`,`surn`,`gender`) values('john','hongmeng','male');

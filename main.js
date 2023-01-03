@@ -7,6 +7,7 @@ const job125333 = require('./job')
 const text1254 = require('./text')
 const seek_2142 = require('./seek')
 const catid125552 = require('./cat')
+const frndlst_1252 = require('./friends')
 const app = express()
 
 const prt = 2000
@@ -132,6 +133,7 @@ app.use('/messages', text1254)
 app.use('/job', job125333)
 app.use('/seek', seek_2142)
 app.use('/cat', catid125552)
+app.use('/friends', frndlst_1252)
 
 
 
@@ -557,13 +559,19 @@ let jbllst = await knex('job').where("user",rquid).select('*').limit(20).orderBy
 	
 	
 	
+let frlstcnt22 = await knex.from('friends')
+    .where('user', qz221a.uid)
+    .count()
+	
+	
 	
 res.render('profile.html', {
 	title:'profile', 
 	user: tusert ? tdatausr : undefined, 
 	dataFetch: qz221a, 
 	dataJ: jbllst, 
-	prlstvs: ctlm1zz2qwe(qz221a.last_visit)
+	prlstvs: ctlm1zz2qwe(qz221a.last_visit),
+	frcnt21: frlstcnt22[0]['count(*)']
 })
 
 }

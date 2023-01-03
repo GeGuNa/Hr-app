@@ -1,0 +1,117 @@
+<%-include("header.html") %>
+
+
+
+<div class="row">
+
+<div class="col-10">
+
+
+
+
+
+<div class="row">
+
+<h5 class="card-title" style="background-color: white;padding: 14px 13px 13px 20px;margin-top:15px;text-align:left">
+<span style="float:left;">
+	
+	Friends:  
+	
+	(<%=cnt%>)</span>
+</h5>
+
+
+<div class="col-12">
+
+<div class="list-group w-auto" style="margin-top:20px;margin-bottom:20px;" id="lsts2"> 
+
+
+<%
+
+frlst.map(function(val,index){ 
+
+
+%>
+
+  <div href="/profile/<%=val.uid %>" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+    <img src="/pics/10.jpg" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+    <div class="d-flex gap-2 w-100 justify-content-between">
+      <div>
+     <a href="/profile/<%=val.uid %>" <h6 class="mb-0"><%=val.name %> <%=val.surn %></h6></a>
+        <p class="mb-0 text-wrap"> Since: <%=tmqwe(val.time)%> </p>
+      </div>
+      <small id="<%=val.uid %>"><img src="/icons/icons8-mail.svg" width="30"></small>
+    </div>
+  </div>
+
+
+<% }) %>
+  
+  
+  
+  </div>
+  
+ <div class="d-flex justify-content-center" id="pagination" style="background: white;padding:10px;">
+  
+  <a style="background:#aaa !important;color: white;">prev</a>
+  
+  <a class="" style="  background-color: #ff5f00!important;color: #fff!important;cursor: pointer;">1</a>
+ 
+ <a class="clr" style="cursor: pointer;border: 0.0625rem solid #9d8f8f;
+    ">2</a>
+  <a class="clr" style="cursor: pointer;border: 0.0625rem solid #9d8f8f;
+    ">3</a>
+     <a class="clr" style="cursor: pointer;border: 0.0625rem solid #9d8f8f;
+    ">4</a>
+     <a class="clr" style="cursor: pointer;border: 0.0625rem solid #9d8f8f;
+    ">5</a>
+    <a style="background:#aaa !important;color: white;">...</a>
+   <a style="color: #000!important;cursor: pointer;border: 0.0625rem solid #9d8f8f;
+    ">105</a>
+      <a style="color: #000!important;cursor: pointer;border: 0.0625rem solid #9d8f8f;
+    ">next</a>
+    
+  </div> 
+  
+  
+   
+  </div>
+ 
+ 
+ 
+  
+</div>
+
+</div>
+
+
+
+<%-include("right.html") %>
+
+
+
+<%
+
+
+function tmqwe(w22){
+	
+let qwe = new Date(w22);
+
+let d = qwe.getDate()
+let y = qwe.getFullYear()
+let m = qwe.getMonth()
+var mS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+	 
+return `${d} ${mS[m]} ${y}`;	 
+}
+
+%>
+
+
+
+</div>
+
+
+
+
+<%-include("footer.html") %>
