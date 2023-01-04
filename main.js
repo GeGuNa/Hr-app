@@ -8,6 +8,7 @@ const text1254 = require('./text')
 const seek_2142 = require('./seek')
 const catid125552 = require('./cat')
 const frndlst_1252 = require('./friends')
+const usr_psts22 = require('./user_posts')
 const app = express()
 
 const prt = 2000
@@ -134,6 +135,7 @@ app.use('/job', job125333)
 app.use('/seek', seek_2142)
 app.use('/cat', catid125552)
 app.use('/friends', frndlst_1252)
+app.use('/user_post', usr_psts22)
 
 
 

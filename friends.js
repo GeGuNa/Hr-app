@@ -103,8 +103,9 @@ let dflstcnt = await knex.from('friends')
 
 
 let psrq = {
-	title:'Friend list', 
-	user: qz221a, 
+	title:'Friend list',  
+	user: tdatausr,
+	author: qz221a,
 	frlst: dflst,
 	cnt: dflstcnt[0]['count(*)']
 }
