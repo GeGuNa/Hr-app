@@ -6,16 +6,62 @@ const { Unix_timestamp, Is_number, knex, t_mail, is_Empty } = require('./funcs.j
 app.get("/", async(req, res) => {
 
 if (tusert == 0) {
-	return res.redirect('/')
+	return res.redirect('/22')
 }
 	
 //const rquid = tdatausr.uid	
 	
-return res.redirect(`/my`)
+//return res.redirect(`/my`)
 
 
 res.end()
 })
+
+
+
+app.post("/add", async(req, res) => {
+
+if (tusert == 0) {
+	return res.redirect('/wqeqw')
+}	
+
+
+const qtext = req.body.text || ""
+const qsbmt = req.body.sbmt || ""
+
+
+console.log(qtext)
+console.log(qsbmt)
+
+
+
+if (qtext.length<3) {
+	return res.redirect(`/my/`)	
+} else if (qsbmt.length<3) {
+	return res.redirect(`/my/`)	
+} else {
+
+
+const czdata = await knex('user_posts').insert({
+  message:  qtext,
+  title:  '', 
+  author:  tdatausr.uid,
+  when_posted:  new Date().getTime()
+}).returning('pid');
+
+
+console.log(czdata)
+
+return res.redirect(`/user_post/${tdatausr.uid}`)
+	
+}
+
+
+
+
+
+res.end();
+});
 
 
 

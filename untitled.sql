@@ -11,6 +11,8 @@ CREATE TABLE `user_posts` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 
+insert into user_posts (`author`,`title`,`message`) values(10,'blab','buhahaha');
+
 
 
 CREATE TABLE `category` (

@@ -565,6 +565,12 @@ let frlstcnt22 = await knex.from('friends')
     .where('user', qz221a.uid)
     .count()
 	
+let usrpst2_cnt222 = await knex.from('user_posts')
+    .where('user_posts.author', qz221a.uid)
+    .innerJoin('user', 'user.uid', 'user_posts.author')   
+    .count()	
+	
+	
 	
 	
 res.render('profile.html', {
@@ -573,7 +579,8 @@ res.render('profile.html', {
 	dataFetch: qz221a, 
 	dataJ: jbllst, 
 	prlstvs: ctlm1zz2qwe(qz221a.last_visit),
-	frcnt21: frlstcnt22[0]['count(*)']
+	frcnt21: frlstcnt22[0]['count(*)'],
+	cnt_pts2zz: usrpst2_cnt222[0]['count(*)']
 })
 
 }

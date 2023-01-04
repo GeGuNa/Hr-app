@@ -114,9 +114,9 @@
 
 <div class="commentBox">
 
-<form style="background:#fff;padding:10px">
-    <textarea class="form-control" style="resize:none;height:80px;" placeholder="What's on your mind"></textarea>
-    <button class="commentPost w-100" style="padding:10px;">Post</button>
+<form style="background:#fff;padding:10px" action="/user_post/add" method="post">
+    <textarea class="form-control" minlength="3" maxlength="1024" required name="text" style="resize:none;height:80px;" placeholder="What's on your mind"></textarea>
+    <button class="commentPost w-100" name="sbmt" value="yupp" style="padding:10px;">Post</button>
 </form>
 
 
