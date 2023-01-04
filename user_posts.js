@@ -3,11 +3,61 @@ const app = express.Router()
 const { Unix_timestamp, Is_number, knex, t_mail, is_Empty } = require('./funcs.js')
 
 
-app.get("/", async(req, res) => {
+app.get("/show/:id", async(req, res) => {
 
 if (tusert == 0) {
-	return res.redirect('/22')
+	return res.redirect('/')
 }
+
+
+const rquid = Math.abs(parseInt(req.params.id)) 
+
+if (isNaN(rquid) === true || rquid == 0) {
+	return res.redirect('/')
+} 
+
+let qz221a  = await knex('user_posts').where("pid",rquid).select('*').first()
+
+if (!qz221a) {
+	return res.redirect('/')
+} 
+
+
+
+
+let dflst = await 
+knex.select(
+'user.uid', 
+'user.name', 
+'user.surn', 
+'user_posts.when_posted as time',
+'user_posts.title as title',
+'user_posts.message as text'
+)
+    .from('user_posts')
+    .where('user_posts.pid', rquid)
+    .innerJoin('user', 'user.uid', 'user_posts.author').first()
+
+
+
+let dflstcnt = await knex.from('user_posts')
+    .where('user_posts.pid', rquid)
+    .innerJoin('user', 'user.uid', 'user_posts.author')
+    .count()
+
+
+
+let psrq = {
+	title:'User posts', 
+	user: tdatausr,
+	data: dflst,
+	cnt: dflstcnt[0]['count(*)']
+}
+
+res.render('posts.html', psrq)
+
+
+
 	
 //const rquid = tdatausr.uid	
 	
@@ -30,8 +80,8 @@ const qtext = req.body.text || ""
 const qsbmt = req.body.sbmt || ""
 
 
-console.log(qtext)
-console.log(qsbmt)
+//console.log(qtext)
+//console.log(qsbmt)
 
 
 
@@ -50,7 +100,7 @@ const czdata = await knex('user_posts').insert({
 }).returning('pid');
 
 
-console.log(czdata)
+//console.log(czdata)
 
 return res.redirect(`/user_post/${tdatausr.uid}`)
 	
@@ -91,6 +141,7 @@ knex.select(
 'user.name', 
 'user.surn', 
 'user_posts.when_posted as time',
+'user_posts.pid as pid',
 'user_posts.title as title',
 'user_posts.message as text'
 )

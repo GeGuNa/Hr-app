@@ -33,16 +33,26 @@ pstlst.map(function(val,index){
 
 %>
 
-  <div href="/profile/<%=val.uid %>" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+  <div href="/profile/<%=val.uid %>" class="mt-4 list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
     <img src="/pics/10.jpg" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
     <div class="d-flex gap-2 w-100 justify-content-between">
       <div>
      <a href="/profile/<%=val.uid %>" <h6 class="mb-0"><%=val.name %> <%=val.surn %></h6></a>
-        <p class="mb-0 text-wrap"> <%=val.text%> </p>
+        <p class="mb-0">Followers: <b>1252</b></p>
       </div>
       <small id="<%=val.uid %>"><img src="/icons/icons8-mail.svg" width="30"></small>
     </div>
+    
+   
+    
   </div>
+  
+      <div style="background:#fff;padding:10px;">
+		  <div class="mb-0" style="word-break:break-all;padding: 0 10px 0 10px;"> 
+			  <a href="/user_post/show/<%=val.pid%>"> <%=val.text%> </a> 
+		  </div>
+	   </div>
+    
 
 
 <% }) %>
