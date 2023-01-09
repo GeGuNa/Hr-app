@@ -569,3 +569,158 @@ color:#000;
 
 font-size:15px;
 }
+
+
+.cz_pdng21 {
+padding:10px;
+}
+
+
+.cz_pdng21 img {
+border-radius:15px;
+height:120; 
+width:100;
+}
+
+.cz_datq_pdngazz {
+padding-bottom:10px;
+padding-top:10px;
+}
+
+.cz_datq_pdngazz img {
+border-radius:25px;
+}
+
+.cz_datq_pdngaz {
+padding-top:10px;
+}
+
+.mnlstgnd {
+margin-left:10px;
+}
+
+.cz_2z {
+opacity:0.6;
+}
+
+.lzzzf123a_22 {
+background-image: 
+        url('data:image/svg+xml;utf8,<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 0 0 0 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path></svg>');
+width: 16px;
+    height: 20px;
+    background-repeat: no-repeat;
+
+}
+
+.cz_datq {
+display:grid;
+width:100%;
+grid-template-columns:auto;
+background: #fff;
+word-break:break-word;
+border-radius:15px;
+}
+
+.t21 {
+padding:10px 0 10px 10px;
+border-bottom:1px solid #d5d2d2;
+}
+
+
+.cz_datq > .czlast {
+border-bottom:1px solid #f3d8d8;
+}
+
+.right_unauth_posts {
+display:inline-block;
+width:100%;
+}
+
+.kk_1 {
+clear: both;padding-left: 12px;
+}
+
+.kk_2 {
+padding-right:10px;padding-top: 8px;
+}
+
+.auth_nv {
+background:#fff;
+padding:10px;
+}
+
+
+.auth_nv2 {
+margin-top:15px;
+background:#fff;
+display:inline-block;
+width:100%;
+}
+
+.auth_nv2 div {
+float:left;
+width:50%;
+text-align:center;
+padding:10px;
+}
+
+.auth_nv2 div:is(.active) {
+background:#1da2e6;
+color:white !important;
+cursor:none;
+}
+
+.forma {
+margin-top:20px;
+max-width:100%;
+background:#fff;
+}
+
+.forma > *:not(.Entrst) {
+padding:15px;
+text-align:center;
+max-width:80%;
+margin:auto;
+}
+
+.forma input {
+border:1px solid gray;
+width:100%;
+}
+
+.forma .czr2 {
+margin-bottom:10px;
+}
+
+.forma select {
+width:100%;
+padding:10px;
+}
+
+.forma button {
+padding:15px;
+background: tomato;
+color:white;
+border-radius:15px;
+width:100%;
+}
+
+
+.auth_nv2 div:is(.active) a {
+color:white !important;
+}
+
+.Entrst {
+font-size:1.5rem;
+font-weight:bold;
+text-align:center;
+padding:10px 0 10px 0;
+}
+
+.auth_lnk {
+margin-top:15px;
+background:#fff;
+display:block;
+width:100%;
+padding:10px;
+}
