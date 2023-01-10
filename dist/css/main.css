@@ -724,3 +724,71 @@ display:block;
 width:100%;
 padding:10px;
 }
+
+
+
+.Crtalert { 
+margin-top:10px;
+background:#fff;
+}
+
+
+.Crtalert .cz2 {
+	padding: 15px 0 15px 0;
+	font-family: inherit;
+    font-weight: 400;
+    line-height: 1.1;
+    color: #444;
+    width:60%;
+    margin:auto;
+}
+
+
+.frmz_1 {
+max-width:70%;
+width:100%;
+margin:auto;
+padding-bottom:20px;
+}
+
+.frmz_1 div input {
+width:90%;
+padding:10px;
+}
+
+.frmz_1 div {
+padding:4px;
+}
+
+.frmz_1 div input::placeholder {
+color:gray;
+}
+
+.frmz_1 div button {
+background: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: 0;
+    /* display: block; */
+	max-width: 90%;
+    width: 100%;
+    margin: auto;
+}
+
+.cz_datqzc123zz {
+padding:10px;
+width:100%;
+background:#fff;
+margin-bottom:20px;
+border-radius:10px 10px 0 0;
+}
+
+
+
+.czbb {
+font-weight:500;
+}
+
+.czbbzz {
+font-weight:500;
+}
