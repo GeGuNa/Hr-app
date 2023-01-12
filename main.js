@@ -51,6 +51,7 @@ app.set('views', `${__dirname}/views/`)
 app.engine('html', require('ejs').renderFile);
 
 
+app.use('/pic_users', express.static('pic_users'))
 app.use('/dist', express.static('dist'))
 app.use('/icons', express.static('icons'))
 app.use('/pics', express.static('pictures'))
@@ -787,6 +788,42 @@ res.render("parlor.html", {title:'Private page', user: tdatausr})
 res.end()
 })
 
+
+app.post('/add_photo', async(req, res) => {
+
+if (!tusert) {
+return res.redirect('/')
+}
+
+const Filen = req.files.Photo;
+
+ if (!req.files || Object.keys(req.files).length === 0) {
+    return res.status(200).send('Choose image first');
+ }
+
+
+ if (Filen === undefined) {
+    return res.status(200).send('Choose image first');
+  }
+  
+
+const Filet = Filen.mimetype;
+
+const qztype = ifImage(Filet)
+const qda222 = new Date().getTime()
+const qz221  = Math.floor(Math.random()*10000)+1
+
+const QzFlNm = `${qz221}_${qda222}_${Filen.name}`
+
+Filen.mv(`${__dirname}/pic_users/${QzFlNm}`)
+
+
+await knex('user').update({photo:QzFlNm}).where('uid', tdatausr.uid)
+
+//alter table `user` add  `photo` text default '';
+
+return res.send('done').status(200)
+});
 
 
 

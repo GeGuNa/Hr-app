@@ -189,6 +189,15 @@ var cidck =  /^[0-9]+$/
 return cidck.test(id)
 }
 
+function Math_rnd(num) {
+	return Math.floor(Math.random()*num)
+}
+
+
+function Array_rnd(arr) {
+	return arr[Math.floor(Math.random()*arr.length)]
+}
+
 
 const knex = require('knex')({
 client: 'mysql',

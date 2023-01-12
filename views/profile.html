@@ -21,7 +21,7 @@
 <div class="list-group w-auto" style="margin-top:25px;">
 	
 <div href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-    <img src="/pics/image_12521.jpg" alt="twbs" width="120" class="rounded-circle flex-shrink-0">
+    <img src="/pic_users/<%=(dataFetch.photo == '' ? 'Default.jpg' : dataFetch.photo) %>" alt="twbs" width="150" class="rounded-circle flex-shrink-0">
     <div class="d-flex gap-2 w-100 justify-content-between">
       <div>
         <span class="mb-0" style="color: black;font-weight: 600;font-size: 26px;"><%=dataFetch.name%> <%=dataFetch.surn%></span>

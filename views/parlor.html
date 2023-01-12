@@ -26,8 +26,9 @@
 <div style="background-color: white;padding:16px;">
 
 <div class="pcntr">
-<img src="/icons/Default.jpg"/>
+<img src="/pic_users/<%=(user.photo == '' ? 'Default.jpg' : user.photo) %>" width="150" id="phtID"/>
 </div>
+
 
 <div class="pcntr Accnt">
 <div style="font-size: 1.5rem;"><%=user.name%> <%=user.surn%></div>
@@ -35,8 +36,102 @@
 <div class="parlort">Bay Area, San Francisco, CA</div>
 </div>
 
+<div class="upldfzz2" onclick="Show_Window()"><input onchange="Changing_photo(this)" id="fltpz" type="file" size="60"/> Change photo</div>
+
 </div>
 
+<script>
+
+function Show_Window() {
+	
+     document.getElementById("fltpz").click();
+     
+     /*function(event){
+		 console.log(event.files)
+	});*/
+     
+}
+
+
+function Changing_photo(event) {
+	
+
+
+	if (!event.files) {
+		return alert('choose an image');
+	}
+	
+    var reader = new FileReader();
+	
+	//console.log(event.files[0])
+	//console.log(event.files[0].name)
+	//console.log(event.files[0].type)
+	
+	var file = event.files[0]
+	var cfltpqwe = file.type
+	
+function ifImage(name) {
+
+const Tpimage = /^image\/(jpg|jpeg|png|gif|webp|bmp)+$/
+
+if (Tpimage.test(name)) {
+  return name.split("/")[1]
+} else {
+ return false; 
+}
+
+}
+
+var czt12Zr123 = ifImage(cfltpqwe)	
+	
+	if (!czt12Zr123) {
+		return alert('choose an image');
+	}
+
+//////////console.log(czt12Zr123)
+
+const cimgvar = ['test','img_bl','bluh','buhaha','who_cares_125z', Math.floor(Math.random()*1500)]
+
+var dataz = new FormData();
+         
+dataz.append("Photo", file, `${cimgvar[Math.floor(Math.random()*cimgvar.length)]}.${czt12Zr123}`);
+      
+        
+axios({
+method: 'post',
+url: '/add_photo',
+data: dataz
+}).then(response => {
+
+//console.log(response)	
+
+
+   const preview = document.querySelector('#phtID');
+
+        
+   reader.addEventListener("load", () => {
+    preview.src = reader.result;
+  }, false); 
+  
+  reader.readAsDataURL(file);	
+	
+}).then(error => {
+	console.log(error)
+});
+            
+              
+  
+	
+	
+ 
+
+	
+}
+
+
+
+
+</script>
 
 
 

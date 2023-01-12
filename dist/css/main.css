@@ -899,8 +899,17 @@ background-image:
 
 
 
+#fltpz {
+display:none;
+width:100%;
+}
 
-
+.upldfzz2 {
+padding:10px;
+background:tomato;
+color:#fff;
+cursor:pointer;
+}
 
 .cz123_shar{
 background:#fff;

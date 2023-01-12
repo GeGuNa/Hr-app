@@ -74,3 +74,6 @@ CREATE TABLE `user_post_comments` (
 
 alter table `user_post_comments` add  foreign key (`author`) references `user` (`uid`);
 alter table `user_post_comments` add  foreign key (`at`) references `user` (`uid`);
+
+alter table `user` add `picurl` text DEFAULT '';
+
