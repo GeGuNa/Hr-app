@@ -40,7 +40,7 @@ return `${d} ${mS[m]}`;
 <div class="list-group w-auto" style="margin-top:20px;margin-bottom:10px;" id="lsts2"> 
 
   <a href="/profile/<%=usrdata.uid%>" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-    <img src="/icons/2918581.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+    <img src="/pic_users/<%=(usrdata.photo == '' ? 'Default.jpg' : usrdata.photo) %>" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
     <div class="d-flex gap-2 w-100 justify-content-between">
       <div>
         <h6 class="mb-0"><%=usrdata.name%></h6>

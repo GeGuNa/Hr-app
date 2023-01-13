@@ -542,6 +542,10 @@ res.end()
 
 
 
+
+
+
+
 app.get('/profile/:id', async(req,res)=>{
 
 let qz221a 
@@ -641,8 +645,30 @@ res.end()
 
 /********** end of company  ************/
 
+app.get('/exit', async(req,res)=>{
+
+if (tusert == 0) {
+	return res.redirect('/')
+}
+
+
+res.cookie('mail', '', {expires: ''})
+res.cookie('pass', '', {expires: ''})
+
+
+res.redirect('/')
+
+res.end()
+})
+
 
 app.get('/my', async(req,res)=>{
+	
+	
+if (tusert == 0) {
+	return res.redirect('/')
+}	
+	
 
 const rquid = tdatausr.uid
 
