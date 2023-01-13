@@ -45,7 +45,7 @@ res.end()
 
 app.get("/my", async(req, res) => {
 
-if (!tusert) {
+if (tusert == 0) {
 return res.redirect('/')
 }
 

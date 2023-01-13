@@ -75,7 +75,6 @@ const qusrp = req.cookies.pass
 
 if (qusrs !== undefined || qusrp !== undefined) {
 
-tusert = 1
 
 tdatausr = await knex('user').where({
   mail: qusrs,
@@ -83,8 +82,9 @@ tdatausr = await knex('user').where({
 }).select('*').first();
 
 
-
 if (tdatausr){
+	
+tusert = 1	
 
 await knex('user')
 .where({uid: tdatausr.uid})
@@ -211,7 +211,7 @@ res.end();
 
 app.post('/add_company', async(req, res) => {
 
-if (!tusert) {
+if (tusert == 0) {
 return res.redirect('/')
 }
 
@@ -287,7 +287,7 @@ res.end()
 
 app.get("/add_company", async(req, res) => {
 
-if (!tusert) {
+if (tusert == 0) {
 return res.redirect('/')
 }
 
@@ -300,7 +300,7 @@ res.end()
 
 app.get("/my_company", async(req, res) => {
 
-if (!tusert) {
+if (tusert == 0) {
 return res.redirect('/')
 }
 
@@ -648,9 +648,8 @@ res.end()
 app.get('/exit', async(req,res)=>{
 
 if (tusert == 0) {
-	return res.redirect('/')
+return res.redirect('/')
 }
-
 
 res.cookie('mail', '', {expires: ''})
 res.cookie('pass', '', {expires: ''})
@@ -666,9 +665,8 @@ app.get('/my', async(req,res)=>{
 	
 	
 if (tusert == 0) {
-	return res.redirect('/')
-}	
-	
+return res.redirect('/')
+}
 
 const rquid = tdatausr.uid
 
@@ -817,7 +815,7 @@ res.end()
 
 app.post('/add_photo', async(req, res) => {
 
-if (!tusert) {
+if (tusert == 0) {
 return res.redirect('/')
 }
 
