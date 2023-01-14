@@ -69,11 +69,11 @@ app.use(async(req,resp,next) => {
 tusert = 0;
 
 
-const qusrs = req.cookies.mail
-const qusrp = req.cookies.pass
+const qusrs = req.cookies.mail || null 
+const qusrp = req.cookies.pass  || null
 
 
-if (qusrs !== undefined || qusrp !== undefined) {
+if (qusrs != null || qusrp != null) {
 
 
 tdatausr = await knex('user').where({
