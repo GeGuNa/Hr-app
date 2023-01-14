@@ -407,6 +407,103 @@ res.end()
 })
 
 
+/* user registration */
+
+
+app.post('/signup', async(req,res) => {
+
+
+const gndr2 = ['male','female','other'];
+const acctp21z = ['employer','seeker'];
+
+
+
+
+const qname = req.body.name || "" 
+const qsurn = req.body.surn  || ""
+const qmail = req.body.mail || "" 
+const qpass = req.body.pass  || ""
+const qnumb = req.body.number  || ""
+const qgend = req.body.gender  || ""
+const qacct = req.body.acttype  || ""
+
+
+/*
+ if (
+qname &&   (qname.length>=2 || qname.length<=30) && 
+qsurn &&  (qsurn.length>=2 || qsurn.length<=30) && 
+qmail &&  t_mail(qmail)&&
+qpass &&  (qpass.length>=2 || qpass.length<=30)  &&
+qnumb &&   (qnumb.length>=2 || qnumb.length<=30)  &&
+acctp21z && acctp21z.includes(qacct) &&
+gndr2.includes(qgend)) {
+ 
+ 
+ 
+ if (
+(qname.length>=2 || qname.length<=30) && 
+(qsurn.length>=2 || qsurn.length<=30) && 
+t_mail(qmail) &&
+(qpass.length>=2 || qpass.length<=30)  &&
+(qnumb.length>=2 || qnumb.length<=30)  &&
+acctp21z.includes(qacct) &&
+//gndr2.includes(qgend)
+
+) {
+ 
+ 
+ */
+
+
+
+if (
+(qname.length>=2 || qname.length<=30) && 
+(qsurn.length>=2 || qsurn.length<=30) && 
+t_mail(qmail) &&
+(qpass.length>=2 || qpass.length<=30)  &&
+(qnumb.length>=2 || qnumb.length<=30)  &&
+acctp21z.includes(qacct) &&
+gndr2.includes(qgend)
+) {
+ 
+let catldata = await knex('user').where({mail: qmail}).first()
+ 
+ 
+if (catldata) {
+	return res.render("register.html", {title:'registration', error: 'Email already exsists'})
+} 
+ 
+
+tdatausr = await knex('user').insert({
+  name: qname,
+  surn:  qsurn,
+  mail: qmail,
+  number: qnumb,
+  gender: qgend,
+  acc_type: qacct,
+  reg_time: new Date().getTime(),
+  password: qpass
+});
+	
+	
+res.cookie('mail', qmail, { expires: new Date(Date.now()+(3600*24*365*50*1000)) })
+res.cookie('pass', qpass, { expires: new Date(Date.now()+(3600*24*365*50*1000)) })
+	
+	
+	
+	
+
+ return res.redirect('/')	
+
+} else {
+	
+ return res.render("register.html", {title:'registration', error: 'Something went wrong'})
+ 
+}
+
+});
+
+/* end of the thing */
 
 
 
