@@ -345,7 +345,7 @@ const exprd = new Date(new Date().getTime()+(3600*24*365*1000));
 
 
 //res.cookie('username', 'qqq', { expires: new Date(Date.now()+(3600*24*365*20*1000)), httpOnly: true })
-res.cookie('username', 'qqq', { expires: new Date(Date.now()+(3600*24*365*50*1000)) })
+//res.cookie('username', 'qqq', { expires: new Date(Date.now()+(3600*24*365*50*1000)) })
 
 
 //req.session.error = ''
@@ -651,9 +651,9 @@ if (tusert == 0) {
 return res.redirect('/')
 }
 
-res.cookie('mail', '', {expires: ''})
-res.cookie('pass', '', {expires: ''})
-
+res.clearCookie('mail', '')
+res.clearCookie('pass', '')
+res.clearCookie('username', '')
 
 res.redirect('/')
 
